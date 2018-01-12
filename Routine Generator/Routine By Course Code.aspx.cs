@@ -271,30 +271,35 @@ namespace Routine_Generator
         {
             LabelMsg.Visible = false;
             LabelCourseCounter.Text = calculateCredit().ToString();
+            TextBoxCourse2.Focus();
         }
 
         protected void TextBoxCourse2_TextChanged(object sender, EventArgs e)
         {
             LabelMsg.Visible = false;
             LabelCourseCounter.Text = calculateCredit().ToString();
+            TextBoxCourse3.Focus();
         }
 
         protected void TextBoxCourse3_TextChanged(object sender, EventArgs e)
         {
             LabelMsg.Visible = false;
             LabelCourseCounter.Text = calculateCredit().ToString();
+            TextBoxCourse4.Focus();
         }
 
         protected void TextBoxCourse4_TextChanged(object sender, EventArgs e)
         {
             LabelMsg.Visible = false;
             LabelCourseCounter.Text = calculateCredit().ToString();
+            TextBoxCourse5.Focus();
         }
 
         protected void TextBoxCourse5_TextChanged(object sender, EventArgs e)
         {
             LabelMsg.Visible = false;
             LabelCourseCounter.Text = calculateCredit().ToString();
+            TextBoxCourse1.Focus();
         }
     }
 }
