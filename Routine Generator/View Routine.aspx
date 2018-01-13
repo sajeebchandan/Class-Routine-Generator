@@ -167,9 +167,29 @@
                 </table>
             </div>
 
-            <asp:GridView ID="GridViewWeekDay" runat="server" AutoGenerateColumns="False" Width="96%" Style="margin-left: 2%" GridLines="None" CssClass="table-responsive" OnRowDataBound="GridViewWeekDay_RowDataBound">
+            <asp:GridView ID="GridViewWeekDay" runat="server" ShowHeader="true" ShowFooter="true" AutoGenerateColumns="False" Width="96%" Style="margin-left: 2%" GridLines="None" CssClass="table-responsive" OnRowDataBound="GridViewWeekDay_RowDataBound">
                 <Columns>
                     <asp:TemplateField>
+                        <HeaderTemplate>
+                            <table class="table  table-bordered  table-responsive">
+                                <tr>
+                                    <td class="text-center" style="background-color: black; color: white; width: 100%">
+                                        <strong>
+                                            <asp:Label ID="LabelHeader" runat="server" Text='<%# HeaderText().ToString().Replace("_", " ") %>' Style="font-size: 25px"></asp:Label>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </table>
+                        </HeaderTemplate>
+                        <FooterTemplate>
+                            <table class="table  table-bordered  table-responsive">
+                                <tr>
+                                    <td class="text-center" style="background-color: black; color: white; width: 100%">
+                                        <h5 style="text-align: center">Developed By <a style="color:lawngreen" href="https://facebook.com/sajeeb.chandan">Sajeeb Chandan</a></h5>
+                                    </td>
+                                </tr>
+                            </table>
+                        </FooterTemplate>
                         <ItemTemplate>
                             <div style="width: 100%;">
                                 <table class="table  table-bordered  table-responsive">
@@ -238,9 +258,30 @@
 
 
             <%-- A Hidden GridView For Minified Version OF Routine--%>
-            <asp:GridView ID="GridViewMin" runat="server" AutoGenerateColumns="False" Width="100%" Style="margin-left: 0%" Visible="false" GridLines="None" CssClass="table-responsive" OnRowDataBound="GridViewMin_RowDataBound">
+            <asp:GridView ID="GridViewMin" runat="server" AutoGenerateColumns="False" ShowHeader="true" ShowFooter="true" Width="100%" Style="margin-left: 0%" Visible="false" GridLines="None" CssClass="table-responsive" OnRowDataBound="GridViewMin_RowDataBound">
                 <Columns>
                     <asp:TemplateField>
+
+                        <HeaderTemplate>
+                            <table class="table  table-bordered  table-responsive">
+                                <tr>
+                                    <td class="text-center" style="background-color: black; color: white; width: 100%">
+                                        <strong>
+                                            <asp:Label ID="LabelHeaderMin" runat="server" Text='<%# HeaderText().ToString().Replace("_", " ") %>' Style="font-size: 25px"></asp:Label>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </table>
+                        </HeaderTemplate>
+                        <FooterTemplate>
+                            <table class="table  table-bordered  table-responsive">
+                                <tr>
+                                    <td class="text-center" style="background-color: black; color: white; width: 100%">
+                                        <h5 style="text-align: center">Developed By <a style="color:lawngreen" href="https://facebook.com/sajeeb.chandan">Sajeeb Chandan</a></h5>
+                                    </td>
+                                </tr>
+                            </table>
+                        </FooterTemplate>
                         <ItemTemplate>
                             <div style="width: 100%;">
                                 <table class="table  table-bordered  table-responsive">
@@ -293,6 +334,7 @@
                                                     </tr>
                                                 </table>
                                             </ItemTemplate>
+
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>

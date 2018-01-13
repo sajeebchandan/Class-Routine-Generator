@@ -74,6 +74,7 @@ namespace Routine_Generator
                         }
 
                         cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
+                        cookieGenerator["semester"] = ""; 
                         Response.Cookies.Add(cookieGenerator);
 
                         Response.Redirect("View Routine.aspx");
@@ -100,6 +101,47 @@ namespace Routine_Generator
             }
         }
 
+        protected void TextBoxCourse1_TextChanged(object sender, EventArgs e)
+        {
+            LabelMsg.Visible = false;
+            LabelCourseCounter.Text = calculateCredit().ToString();
+            TextBoxCourse2.Focus();
+        }
+
+        protected void TextBoxCourse2_TextChanged(object sender, EventArgs e)
+        {
+            LabelMsg.Visible = false;
+            LabelCourseCounter.Text = calculateCredit().ToString();
+            TextBoxCourse3.Focus();
+        }
+
+        protected void TextBoxCourse3_TextChanged(object sender, EventArgs e)
+        {
+            LabelMsg.Visible = false;
+            LabelCourseCounter.Text = calculateCredit().ToString();
+            TextBoxCourse4.Focus();
+        }
+
+        protected void TextBoxCourse4_TextChanged(object sender, EventArgs e)
+        {
+            LabelMsg.Visible = false;
+            LabelCourseCounter.Text = calculateCredit().ToString();
+            TextBoxCourse5.Focus();
+        }
+
+        protected void TextBoxCourse5_TextChanged(object sender, EventArgs e)
+        {
+            LabelMsg.Visible = false;
+            LabelCourseCounter.Text = calculateCredit().ToString();
+            TextBoxCourse1.Focus();
+        }
+
+
+        //List of all EXTERNEL METHODS
+
+        #region EXTERNAL METHODS
+
+        #region Get Table Name By Selected Department
         private string GetTableNameByDept(string dept)
         {
             if (dept == "SWE")
@@ -122,8 +164,8 @@ namespace Routine_Generator
             {
                 return "";
             }
-        }
-
+        } 
+        #endregion
 
         #region Get Course Credit By Course Code
         public int GetCourseCredit(string CourseCode)
@@ -216,6 +258,7 @@ namespace Routine_Generator
         }
         #endregion
 
+        #region Calculate Credit
         private int calculateCredit()
         {
             if (!String.IsNullOrEmpty(TextBoxCourse1.Text.ToString()))
@@ -265,41 +308,9 @@ namespace Routine_Generator
 
             int total = Convert.ToInt32(ViewState["course1"].ToString()) + Convert.ToInt32(ViewState["course2"].ToString()) + Convert.ToInt32(ViewState["course3"].ToString()) + Convert.ToInt32(ViewState["course4"].ToString()) + Convert.ToInt32(ViewState["course5"].ToString());
             return total;
-        }
+        } 
+        #endregion
 
-        protected void TextBoxCourse1_TextChanged(object sender, EventArgs e)
-        {
-            LabelMsg.Visible = false;
-            LabelCourseCounter.Text = calculateCredit().ToString();
-            TextBoxCourse2.Focus();
-        }
-
-        protected void TextBoxCourse2_TextChanged(object sender, EventArgs e)
-        {
-            LabelMsg.Visible = false;
-            LabelCourseCounter.Text = calculateCredit().ToString();
-            TextBoxCourse3.Focus();
-        }
-
-        protected void TextBoxCourse3_TextChanged(object sender, EventArgs e)
-        {
-            LabelMsg.Visible = false;
-            LabelCourseCounter.Text = calculateCredit().ToString();
-            TextBoxCourse4.Focus();
-        }
-
-        protected void TextBoxCourse4_TextChanged(object sender, EventArgs e)
-        {
-            LabelMsg.Visible = false;
-            LabelCourseCounter.Text = calculateCredit().ToString();
-            TextBoxCourse5.Focus();
-        }
-
-        protected void TextBoxCourse5_TextChanged(object sender, EventArgs e)
-        {
-            LabelMsg.Visible = false;
-            LabelCourseCounter.Text = calculateCredit().ToString();
-            TextBoxCourse1.Focus();
-        }
+        #endregion
     }
 }

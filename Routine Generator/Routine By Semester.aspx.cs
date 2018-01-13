@@ -27,7 +27,7 @@ namespace Routine_Generator
                     cookieGenerator["course4"] = "NULL";
                     cookieGenerator["course5"] = "NULL";
                     cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + TextBoxSec.Text;
+                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
                     Response.Cookies.Add(cookieGenerator);
                     Response.Redirect("View Routine.aspx");
                 }
@@ -39,7 +39,7 @@ namespace Routine_Generator
                     cookieGenerator["course4"] = "SWE122" + TextBoxSec.Text.ToString();
                     cookieGenerator["course5"] = "NULL";
                     cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + TextBoxSec.Text;
+                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
                     Response.Cookies.Add(cookieGenerator);
                     Response.Redirect("View Routine.aspx");
                 }
@@ -51,7 +51,7 @@ namespace Routine_Generator
                     cookieGenerator["course4"] = "STA134" + TextBoxSec.Text.ToString();
                     cookieGenerator["course5"] = "NULL";
                     cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + TextBoxSec.Text;
+                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
                     Response.Cookies.Add(cookieGenerator);
                     Response.Redirect("View Routine.aspx");
                 }
@@ -63,7 +63,7 @@ namespace Routine_Generator
                     cookieGenerator["course4"] = "NULL";
                     cookieGenerator["course5"] = "NULL";
                     cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + TextBoxSec.Text;
+                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
                     Response.Cookies.Add(cookieGenerator);
                     Response.Redirect("View Routine.aspx");
                 }
@@ -75,7 +75,7 @@ namespace Routine_Generator
                     cookieGenerator["course4"] = "SWE224" + TextBoxSec.Text.ToString();
                     cookieGenerator["course5"] = "NULL";
                     cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + TextBoxSec.Text;
+                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
                     Response.Cookies.Add(cookieGenerator);
                     Response.Redirect("View Routine.aspx");
                 }
@@ -87,7 +87,7 @@ namespace Routine_Generator
                     cookieGenerator["course4"] = "ACC124" + TextBoxSec.Text.ToString();
                     cookieGenerator["course5"] = "NULL";
                     cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + TextBoxSec.Text;
+                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
                     Response.Cookies.Add(cookieGenerator);
                     Response.Redirect("View Routine.aspx");
                 }
@@ -99,7 +99,7 @@ namespace Routine_Generator
                     cookieGenerator["course4"] = "SWE313" + TextBoxSec.Text.ToString();
                     cookieGenerator["course5"] = "NULL";
                     cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + TextBoxSec.Text;
+                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
                     Response.Cookies.Add(cookieGenerator);
                     Response.Redirect("View Routine.aspx");
                 }
@@ -111,7 +111,7 @@ namespace Routine_Generator
                     cookieGenerator["course4"] = "SWE413" + TextBoxSec.Text.ToString();
                     cookieGenerator["course5"] = "NULL";
                     cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + TextBoxSec.Text;
+                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
                     Response.Cookies.Add(cookieGenerator);
                     Response.Redirect("View Routine.aspx");
                 }
@@ -123,7 +123,7 @@ namespace Routine_Generator
                     cookieGenerator["course4"] = "SWE424" + TextBoxSec.Text.ToString();
                     cookieGenerator["course5"] = "NULL";
                     cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + TextBoxSec.Text;
+                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
                     Response.Cookies.Add(cookieGenerator);
                     Response.Redirect("View Routine.aspx");
                 }
@@ -135,7 +135,7 @@ namespace Routine_Generator
                     cookieGenerator["course4"] = "SWE332" + TextBoxSec.Text.ToString();
                     cookieGenerator["course5"] = "NULL";
                     cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + TextBoxSec.Text;
+                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
                     Response.Cookies.Add(cookieGenerator);
                     Response.Redirect("View Routine.aspx");
                 }
@@ -147,7 +147,7 @@ namespace Routine_Generator
                     cookieGenerator["course4"] = "NULL";
                     cookieGenerator["course5"] = "NULL";
                     cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + TextBoxSec.Text;
+                    cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
                     Response.Cookies.Add(cookieGenerator);
                     Response.Redirect("View Routine.aspx");
                 }

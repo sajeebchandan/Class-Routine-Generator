@@ -69,6 +69,8 @@ namespace Routine_Generator
         }
 
 
+        
+
         //List of all EXTERNEL METHODS
 
         #region ALL EXTERNAL METHODS
@@ -1338,6 +1340,25 @@ namespace Routine_Generator
             else
                 return "";
         }
+        #endregion
+
+        #region Get The HeaderText For the GridView && GridViewMin
+        public string HeaderText()
+        {
+            HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
+            if (gatheredCookie["semester"].ToString() == "")
+            {
+                GridViewWeekDay.ShowHeader = false;
+                GridViewMin.ShowHeader = false;
+                //GridViewWeekDay.ShowFooter = false;
+                //GridViewMin.ShowFooter = false;
+                return "";
+            }
+            else
+            {
+                return gatheredCookie["semester"].ToString();
+            }
+        } 
         #endregion
 
         #endregion
