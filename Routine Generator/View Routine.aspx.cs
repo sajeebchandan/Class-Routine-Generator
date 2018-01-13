@@ -14,62 +14,138 @@ namespace Routine_Generator
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            try
             {
-                HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
-                LoadData(gatheredCookie["dept"].ToString());
-                LoadDataMin(gatheredCookie["dept"].ToString());
-            }
+                if (!IsPostBack)
+                {
+                    HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
+                    LoadData(gatheredCookie["dept"].ToString());
+                    LoadDataMin(gatheredCookie["dept"].ToString());
+                }
 
-            if (IsPostBack || !IsPostBack)
+                if (IsPostBack || !IsPostBack)
+                {
+                    HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
+                    LABloader(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+                }
+            }
+            catch (Exception ex)
             {
-                HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
-                LABloader(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
             }
-        } 
+        }
 
-        
+
 
         protected void GridViewWeekDay_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
-            RowDataBound(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+            try
+            {
+                HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
+                RowDataBound(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+            }
         }
 
         protected void LinkButtonLAB1_Click(object sender, EventArgs e)
         {
-            System.Threading.Thread.Sleep(2000);
-            HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
-            LoadDataLAB1(gatheredCookie["dept"].ToString());
-            RowDataBoundLAB1(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
-            RowDataBoundLAB1Min(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+            try
+            {
+                System.Threading.Thread.Sleep(2000);
+                HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
+                LoadDataLAB1(gatheredCookie["dept"].ToString());
+                RowDataBoundLAB1(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+                RowDataBoundLAB1Min(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+            }
+            catch (Exception ex)
+            {
+
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+            }
         }
 
         protected void LinkButtonLAB2_Click(object sender, EventArgs e)
         {
-            System.Threading.Thread.Sleep(2000);
-            HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
-            LoadDataLAB2(gatheredCookie["dept"].ToString());
-            RowDataBoundLAB2(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
-            RowDataBoundLAB2Min(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+            try
+            {
+                System.Threading.Thread.Sleep(2000);
+                HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
+                LoadDataLAB2(gatheredCookie["dept"].ToString());
+                RowDataBoundLAB2(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+                RowDataBoundLAB2Min(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
+            }
         }
 
         protected void GridViewMin_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
-            RowDataBoundMin(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+            try
+            {
+                HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
+                RowDataBoundMin(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
+            }
         }
 
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            GridViewMin.Visible = true;
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "onClickbtnMin()", true);
+            try
+            {
+                GridViewMin.Visible = true;
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "onClickbtnMin()", true);
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
+            }
             //GridViewMin.Visible = false;
         }
 
 
-        
+
 
         //List of all EXTERNEL METHODS
 
@@ -78,164 +154,229 @@ namespace Routine_Generator
         #region Load Data Into GridView
         private void LoadData(string dept)
         {
-            HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection con = new SqlConnection(CS);
-            string sql = "SELECT DISTINCT Day, DayID FROM " + dept + " WHERE Course LIKE @course1 OR Course LIKE @course2 OR Course LIKE @course3 OR Course LIKE @course4 OR Course LIKE @course5 ORDER BY DayID";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@course1", "%" + gatheredCookie["course1"].ToString() + "%");
-            cmd.Parameters.AddWithValue("@course2", "%" + gatheredCookie["course2"].ToString() + "%");
-            cmd.Parameters.AddWithValue("@course3", "%" + gatheredCookie["course3"].ToString() + "%");
-            cmd.Parameters.AddWithValue("@course4", "%" + gatheredCookie["course4"].ToString() + "%");
-            cmd.Parameters.AddWithValue("@course5", "%" + gatheredCookie["course5"].ToString() + "%");
-            con.Open();
-            SqlDataReader rdr = cmd.ExecuteReader();
-            GridViewWeekDay.DataSource = rdr;
-            GridViewWeekDay.DataBind();
-            con.Close();
+            try
+            {
+                HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
+                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                SqlConnection con = new SqlConnection(CS);
+                string sql = "SELECT DISTINCT Day, DayID FROM " + dept + " WHERE Course LIKE @course1 OR Course LIKE @course2 OR Course LIKE @course3 OR Course LIKE @course4 OR Course LIKE @course5 ORDER BY DayID";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@course1", "%" + gatheredCookie["course1"].ToString() + "%");
+                cmd.Parameters.AddWithValue("@course2", "%" + gatheredCookie["course2"].ToString() + "%");
+                cmd.Parameters.AddWithValue("@course3", "%" + gatheredCookie["course3"].ToString() + "%");
+                cmd.Parameters.AddWithValue("@course4", "%" + gatheredCookie["course4"].ToString() + "%");
+                cmd.Parameters.AddWithValue("@course5", "%" + gatheredCookie["course5"].ToString() + "%");
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                GridViewWeekDay.DataSource = rdr;
+                GridViewWeekDay.DataBind();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
+            }
         }
         #endregion
 
         #region Load Data into GridViewMin
         private void LoadDataMin(string dept)
         {
-            HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection con = new SqlConnection(CS);
-            string sql = "SELECT DISTINCT Day, DayID FROM " + dept + " WHERE Course LIKE @course1 OR Course LIKE @course2 OR Course LIKE @course3 OR Course LIKE @course4 OR Course LIKE @course5 ORDER BY DayID";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@course1", "%" + gatheredCookie["course1"].ToString() + "%");
-            cmd.Parameters.AddWithValue("@course2", "%" + gatheredCookie["course2"].ToString() + "%");
-            cmd.Parameters.AddWithValue("@course3", "%" + gatheredCookie["course3"].ToString() + "%");
-            cmd.Parameters.AddWithValue("@course4", "%" + gatheredCookie["course4"].ToString() + "%");
-            cmd.Parameters.AddWithValue("@course5", "%" + gatheredCookie["course5"].ToString() + "%");
-            con.Open();
-            SqlDataReader rdr = cmd.ExecuteReader();
-            GridViewMin.DataSource = rdr;
-            GridViewMin.DataBind();
-            con.Close();
+            try
+            {
+                HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
+                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                SqlConnection con = new SqlConnection(CS);
+                string sql = "SELECT DISTINCT Day, DayID FROM " + dept + " WHERE Course LIKE @course1 OR Course LIKE @course2 OR Course LIKE @course3 OR Course LIKE @course4 OR Course LIKE @course5 ORDER BY DayID";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@course1", "%" + gatheredCookie["course1"].ToString() + "%");
+                cmd.Parameters.AddWithValue("@course2", "%" + gatheredCookie["course2"].ToString() + "%");
+                cmd.Parameters.AddWithValue("@course3", "%" + gatheredCookie["course3"].ToString() + "%");
+                cmd.Parameters.AddWithValue("@course4", "%" + gatheredCookie["course4"].ToString() + "%");
+                cmd.Parameters.AddWithValue("@course5", "%" + gatheredCookie["course5"].ToString() + "%");
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                GridViewMin.DataSource = rdr;
+                GridViewMin.DataBind();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
+            }
         }
         #endregion
 
         #region Load Data into GridView For LAB1
         private void LoadDataLAB1(string dept)
         {
-            HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection con = new SqlConnection(CS);
-            string sql = "SELECT DISTINCT Day, DayID FROM " + dept + " WHERE Course = @course1 OR Course = @course2 OR Course = @course3 OR Course = @course4 OR Course = @course5 OR Course = @course1lab OR Course = @course2lab OR Course = @course3lab OR Course = @course4lab OR Course = @course5lab OR Course = @course1l OR Course = @course2l OR Course = @course3l OR Course = @course4l OR Course = @course5l  ORDER BY DayID";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@course1", gatheredCookie["course1"].ToString());
-            cmd.Parameters.AddWithValue("@course2", gatheredCookie["course2"].ToString());
-            cmd.Parameters.AddWithValue("@course3", gatheredCookie["course3"].ToString());
-            cmd.Parameters.AddWithValue("@course4", gatheredCookie["course4"].ToString());
-            cmd.Parameters.AddWithValue("@course5", gatheredCookie["course5"].ToString());
-            cmd.Parameters.AddWithValue("@course1lab", gatheredCookie["course1"].ToString()+"LAB1");
-            cmd.Parameters.AddWithValue("@course2lab", gatheredCookie["course2"].ToString() + "LAB1");
-            cmd.Parameters.AddWithValue("@course3lab", gatheredCookie["course3"].ToString() + "LAB1");
-            cmd.Parameters.AddWithValue("@course4lab", gatheredCookie["course4"].ToString() + "LAB1");
-            cmd.Parameters.AddWithValue("@course5lab", gatheredCookie["course5"].ToString() + "LAB1");
-            cmd.Parameters.AddWithValue("@course1l", gatheredCookie["course1"].ToString() + "1");
-            cmd.Parameters.AddWithValue("@course2l", gatheredCookie["course2"].ToString() + "1");
-            cmd.Parameters.AddWithValue("@course3l", gatheredCookie["course3"].ToString() + "1");
-            cmd.Parameters.AddWithValue("@course4l", gatheredCookie["course4"].ToString() + "1");
-            cmd.Parameters.AddWithValue("@course5l", gatheredCookie["course5"].ToString() + "1");
-            con.Open();
-            SqlDataReader rdr = cmd.ExecuteReader();
-            GridViewWeekDay.DataSource = rdr;
-            GridViewWeekDay.DataBind();
-            con.Close();
+            try
+            {
+                HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
+                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                SqlConnection con = new SqlConnection(CS);
+                string sql = "SELECT DISTINCT Day, DayID FROM " + dept + " WHERE Course = @course1 OR Course = @course2 OR Course = @course3 OR Course = @course4 OR Course = @course5 OR Course = @course1lab OR Course = @course2lab OR Course = @course3lab OR Course = @course4lab OR Course = @course5lab OR Course = @course1l OR Course = @course2l OR Course = @course3l OR Course = @course4l OR Course = @course5l  ORDER BY DayID";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@course1", gatheredCookie["course1"].ToString());
+                cmd.Parameters.AddWithValue("@course2", gatheredCookie["course2"].ToString());
+                cmd.Parameters.AddWithValue("@course3", gatheredCookie["course3"].ToString());
+                cmd.Parameters.AddWithValue("@course4", gatheredCookie["course4"].ToString());
+                cmd.Parameters.AddWithValue("@course5", gatheredCookie["course5"].ToString());
+                cmd.Parameters.AddWithValue("@course1lab", gatheredCookie["course1"].ToString() + "LAB1");
+                cmd.Parameters.AddWithValue("@course2lab", gatheredCookie["course2"].ToString() + "LAB1");
+                cmd.Parameters.AddWithValue("@course3lab", gatheredCookie["course3"].ToString() + "LAB1");
+                cmd.Parameters.AddWithValue("@course4lab", gatheredCookie["course4"].ToString() + "LAB1");
+                cmd.Parameters.AddWithValue("@course5lab", gatheredCookie["course5"].ToString() + "LAB1");
+                cmd.Parameters.AddWithValue("@course1l", gatheredCookie["course1"].ToString() + "1");
+                cmd.Parameters.AddWithValue("@course2l", gatheredCookie["course2"].ToString() + "1");
+                cmd.Parameters.AddWithValue("@course3l", gatheredCookie["course3"].ToString() + "1");
+                cmd.Parameters.AddWithValue("@course4l", gatheredCookie["course4"].ToString() + "1");
+                cmd.Parameters.AddWithValue("@course5l", gatheredCookie["course5"].ToString() + "1");
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                GridViewWeekDay.DataSource = rdr;
+                GridViewWeekDay.DataBind();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
+            }
         }
         #endregion
 
         #region Load Data into GridView For LAB2
         private void LoadDataLAB2(string dept)
         {
-            HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection con = new SqlConnection(CS);
-            string sql = "SELECT DISTINCT Day, DayID FROM " + dept + " WHERE Course = @course1 OR Course = @course2 OR Course = @course3 OR Course = @course4 OR Course = @course5 OR Course = @course1lab OR Course = @course2lab OR Course = @course3lab OR Course = @course4lab OR Course = @course5lab OR Course = @course1l OR Course = @course2l OR Course = @course3l OR Course = @course4l OR Course = @course5l  ORDER BY DayID";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@course1", gatheredCookie["course1"].ToString());
-            cmd.Parameters.AddWithValue("@course2", gatheredCookie["course2"].ToString());
-            cmd.Parameters.AddWithValue("@course3", gatheredCookie["course3"].ToString());
-            cmd.Parameters.AddWithValue("@course4", gatheredCookie["course4"].ToString());
-            cmd.Parameters.AddWithValue("@course5", gatheredCookie["course5"].ToString());
-            cmd.Parameters.AddWithValue("@course1lab", gatheredCookie["course1"].ToString() + "LAB2");
-            cmd.Parameters.AddWithValue("@course2lab", gatheredCookie["course2"].ToString() + "LAB2");
-            cmd.Parameters.AddWithValue("@course3lab", gatheredCookie["course3"].ToString() + "LAB2");
-            cmd.Parameters.AddWithValue("@course4lab", gatheredCookie["course4"].ToString() + "LAB2");
-            cmd.Parameters.AddWithValue("@course5lab", gatheredCookie["course5"].ToString() + "LAB2");
-            cmd.Parameters.AddWithValue("@course1l", gatheredCookie["course1"].ToString() + "2");
-            cmd.Parameters.AddWithValue("@course2l", gatheredCookie["course2"].ToString() + "2");
-            cmd.Parameters.AddWithValue("@course3l", gatheredCookie["course3"].ToString() + "2");
-            cmd.Parameters.AddWithValue("@course4l", gatheredCookie["course4"].ToString() + "2");
-            cmd.Parameters.AddWithValue("@course5l", gatheredCookie["course5"].ToString() + "2");
-            con.Open();
-            SqlDataReader rdr = cmd.ExecuteReader();
-            GridViewWeekDay.DataSource = rdr;
-            GridViewWeekDay.DataBind();
-            con.Close();
+            try
+            {
+                HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
+                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                SqlConnection con = new SqlConnection(CS);
+                string sql = "SELECT DISTINCT Day, DayID FROM " + dept + " WHERE Course = @course1 OR Course = @course2 OR Course = @course3 OR Course = @course4 OR Course = @course5 OR Course = @course1lab OR Course = @course2lab OR Course = @course3lab OR Course = @course4lab OR Course = @course5lab OR Course = @course1l OR Course = @course2l OR Course = @course3l OR Course = @course4l OR Course = @course5l  ORDER BY DayID";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@course1", gatheredCookie["course1"].ToString());
+                cmd.Parameters.AddWithValue("@course2", gatheredCookie["course2"].ToString());
+                cmd.Parameters.AddWithValue("@course3", gatheredCookie["course3"].ToString());
+                cmd.Parameters.AddWithValue("@course4", gatheredCookie["course4"].ToString());
+                cmd.Parameters.AddWithValue("@course5", gatheredCookie["course5"].ToString());
+                cmd.Parameters.AddWithValue("@course1lab", gatheredCookie["course1"].ToString() + "LAB2");
+                cmd.Parameters.AddWithValue("@course2lab", gatheredCookie["course2"].ToString() + "LAB2");
+                cmd.Parameters.AddWithValue("@course3lab", gatheredCookie["course3"].ToString() + "LAB2");
+                cmd.Parameters.AddWithValue("@course4lab", gatheredCookie["course4"].ToString() + "LAB2");
+                cmd.Parameters.AddWithValue("@course5lab", gatheredCookie["course5"].ToString() + "LAB2");
+                cmd.Parameters.AddWithValue("@course1l", gatheredCookie["course1"].ToString() + "2");
+                cmd.Parameters.AddWithValue("@course2l", gatheredCookie["course2"].ToString() + "2");
+                cmd.Parameters.AddWithValue("@course3l", gatheredCookie["course3"].ToString() + "2");
+                cmd.Parameters.AddWithValue("@course4l", gatheredCookie["course4"].ToString() + "2");
+                cmd.Parameters.AddWithValue("@course5l", gatheredCookie["course5"].ToString() + "2");
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                GridViewWeekDay.DataSource = rdr;
+                GridViewWeekDay.DataBind();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
+            }
         }
         #endregion
 
         #region Load Link Button For LAB Separation
-        private void LABloader(string course1, string course2, string course3, string course4, string  course5, string dept)
+        private void LABloader(string course1, string course2, string course3, string course4, string course5, string dept)
         {
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection con = new SqlConnection(CS);
-            string sql = "SELECT * FROM " + dept + " WHERE Course LIKE'%" + course1 + "%' OR Course LIKE'%" + course2 + "%' OR Course LIKE'%" + course3 + "%' OR Course LIKE'%" + course4 + "%' OR Course LIKE'%" + course5 + "%'";
-            DataTable dtlabloader = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
-            adapter.Fill(dtlabloader);
-
-
-            foreach (DataRow dtlabloaderRow in dtlabloader.Rows)
+            try
             {
+                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                SqlConnection con = new SqlConnection(CS);
+                string sql = "SELECT * FROM " + dept + " WHERE Course LIKE'%" + course1 + "%' OR Course LIKE'%" + course2 + "%' OR Course LIKE'%" + course3 + "%' OR Course LIKE'%" + course4 + "%' OR Course LIKE'%" + course5 + "%'";
+                DataTable dtlabloader = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                adapter.Fill(dtlabloader);
 
-                if (dtlabloaderRow["Course"].ToString().Contains(course1 + "LAB1"))
-                {
-                    LinkButtonLAB1.Text = "Filter Routine by LAB1";
-                }
-                if (dtlabloaderRow["Course"].ToString().Contains(course1 + "LAB2"))
-                {
-                    LinkButtonLAB2.Text = "Filter Routine by LAB2";
-                }
 
-                if (dtlabloaderRow["Course"].ToString().Contains(course2 + "LAB1"))
+                foreach (DataRow dtlabloaderRow in dtlabloader.Rows)
                 {
-                    LinkButtonLAB1.Text = "Filter Routine by LAB1";
-                }
-                if (dtlabloaderRow["Course"].ToString().Contains(course2 + "LAB2"))
-                {
-                    LinkButtonLAB2.Text = "Filter Routine by LAB2";
-                }
 
-                if (dtlabloaderRow["Course"].ToString().Contains(course3 + "LAB1"))
-                {
-                    LinkButtonLAB1.Text = "Filter Routine by LAB1";
-                }
-                if (dtlabloaderRow["Course"].ToString().Contains(course3 + "LAB2"))
-                {
-                    LinkButtonLAB2.Text = "Filter Routine by LAB2";
-                }
+                    if (dtlabloaderRow["Course"].ToString().Contains(course1 + "LAB1") || dtlabloaderRow["Course"].ToString()[dtlabloaderRow["Course"].ToString().Length - 1] == '1')
+                    {
+                        LinkButtonLAB1.Text = "Filter Routine by LAB1";
+                    }
+                    if (dtlabloaderRow["Course"].ToString().Contains(course1 + "LAB2") || dtlabloaderRow["Course"].ToString()[dtlabloaderRow["Course"].ToString().Length - 1] == '2')
+                    {
+                        LinkButtonLAB2.Text = "Filter Routine by LAB2";
+                    }
 
-                if (dtlabloaderRow["Course"].ToString().Contains(course4 + "LAB1"))
-                {
-                    LinkButtonLAB1.Text = "Filter Routine by LAB1";
+                    if (dtlabloaderRow["Course"].ToString().Contains(course2 + "LAB1") || dtlabloaderRow["Course"].ToString()[dtlabloaderRow["Course"].ToString().Length - 1] == '1')
+                    {
+                        LinkButtonLAB1.Text = "Filter Routine by LAB1";
+                    }
+                    if (dtlabloaderRow["Course"].ToString().Contains(course2 + "LAB2") || dtlabloaderRow["Course"].ToString()[dtlabloaderRow["Course"].ToString().Length - 1] == '2')
+                    {
+                        LinkButtonLAB2.Text = "Filter Routine by LAB2";
+                    }
+
+                    if (dtlabloaderRow["Course"].ToString().Contains(course3 + "LAB1") || dtlabloaderRow["Course"].ToString()[dtlabloaderRow["Course"].ToString().Length - 1] == '1')
+                    {
+                        LinkButtonLAB1.Text = "Filter Routine by LAB1";
+                    }
+                    if (dtlabloaderRow["Course"].ToString().Contains(course3 + "LAB2") || dtlabloaderRow["Course"].ToString()[dtlabloaderRow["Course"].ToString().Length - 1] == '2')
+                    {
+                        LinkButtonLAB2.Text = "Filter Routine by LAB2";
+                    }
+
+                    if (dtlabloaderRow["Course"].ToString().Contains(course4 + "LAB1") || dtlabloaderRow["Course"].ToString()[dtlabloaderRow["Course"].ToString().Length - 1] == '1')
+                    {
+                        LinkButtonLAB1.Text = "Filter Routine by LAB1";
+                    }
+                    if (dtlabloaderRow["Course"].ToString().Contains(course4 + "LAB2") || dtlabloaderRow["Course"].ToString()[dtlabloaderRow["Course"].ToString().Length - 1] == '2')
+                    {
+                        LinkButtonLAB2.Text = "Filter Routine by LAB2";
+                    }
+                    if (dtlabloaderRow["Course"].ToString().Contains(course5 + "LAB1") || dtlabloaderRow["Course"].ToString()[dtlabloaderRow["Course"].ToString().Length - 1] == '1')
+                    {
+                        LinkButtonLAB1.Text = "Filter Routine by LAB1";
+                    }
+                    if (dtlabloaderRow["Course"].ToString().Contains(course5 + "LAB2") || dtlabloaderRow["Course"].ToString()[dtlabloaderRow["Course"].ToString().Length - 1] == '2')
+                    {
+                        LinkButtonLAB2.Text = "Filter Routine by LAB2";
+                    }
                 }
-                if (dtlabloaderRow["Course"].ToString().Contains(course4 + "LAB2"))
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
                 {
-                    LinkButtonLAB2.Text = "Filter Routine by LAB2";
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
                 }
-                if (dtlabloaderRow["Course"].ToString().Contains(course5 + "LAB1"))
-                {
-                    LinkButtonLAB1.Text = "Filter Routine by LAB1";
-                }
-                if (dtlabloaderRow["Course"].ToString().Contains(course5 + "LAB2"))
-                {
-                    LinkButtonLAB2.Text = "Filter Routine by LAB2";
-                }
+                
             }
         }
         #endregion
@@ -244,154 +385,167 @@ namespace Routine_Generator
         private void RowDataBound(string course1, string course2, string course3, string course4, string course5, string dept)
         {
 
-            foreach (GridViewRow row in GridViewWeekDay.Rows)
+            try
             {
-                Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
-                GridView GridChild = (GridView)row.FindControl("GridViewChild");
-                string WeekDay = WeekDayLabel.Text.ToString();
-                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-                SqlConnection con = new SqlConnection(CS);
-                string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
-                DataTable dtOld = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
-                adapter.Fill(dtOld);
-                DataTable dtNew = new DataTable();
-                dtNew.Columns.Add("Course Code");
-                dtNew.Columns.Add("Teacher Initial");
-                dtNew.Columns.Add("Class Time");
-                dtNew.Columns.Add("Room No");
-                foreach (DataRow OldRow in dtOld.Rows)
+                foreach (GridViewRow row in GridViewWeekDay.Rows)
                 {
-
-                    if (OldRow["Course"].ToString().Contains(course1))
+                    Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
+                    GridView GridChild = (GridView)row.FindControl("GridViewChild");
+                    string WeekDay = WeekDayLabel.Text.ToString();
+                    string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                    SqlConnection con = new SqlConnection(CS);
+                    string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
+                    DataTable dtOld = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                    adapter.Fill(dtOld);
+                    DataTable dtNew = new DataTable();
+                    dtNew.Columns.Add("Course Code");
+                    dtNew.Columns.Add("Teacher Initial");
+                    dtNew.Columns.Add("Class Time");
+                    dtNew.Columns.Add("Room No");
+                    foreach (DataRow OldRow in dtOld.Rows)
                     {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
 
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
+                        if (OldRow["Course"].ToString().Contains(course1))
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
 
-                        dtNew.Rows.Add(NewRow);
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        //if (OldRow["Course"].ToString().Contains("SWE423DLAB1"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        //if (OldRow["Course"].ToString().Contains("SWE423DLAB2"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        if (OldRow["Course"].ToString().Contains(course2))
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                            //NewRow["Course Title"] = OldRow["Course"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        //if (OldRow["Course"].ToString().Contains("SWE425DLAB1"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        //if (OldRow["Course"].ToString().Contains("SWE425DLAB2"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        if (OldRow["Course"].ToString().Contains(course3))
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                            //NewRow["Course Title"] = OldRow["Course"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        //if (OldRow["Course"].ToString().Contains("SWE426DLAB1"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        //if (OldRow["Course"].ToString().Contains("SWE426DLAB2"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        if (OldRow["Course"].ToString().Contains(course4))
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                            //NewRow["Course Title"] = OldRow["Course"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        //if (OldRow["Course"].ToString().Contains("SWE332D2"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        if (OldRow["Course"].ToString().Contains(course5))
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                            //NewRow["Course Title"] = OldRow["Course"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
                     }
-                    //if (OldRow["Course"].ToString().Contains("SWE423DLAB1"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    //if (OldRow["Course"].ToString().Contains("SWE423DLAB2"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    if (OldRow["Course"].ToString().Contains(course2))
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                        //NewRow["Course Title"] = OldRow["Course"].ToString();
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    //if (OldRow["Course"].ToString().Contains("SWE425DLAB1"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    //if (OldRow["Course"].ToString().Contains("SWE425DLAB2"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    if (OldRow["Course"].ToString().Contains(course3))
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                        //NewRow["Course Title"] = OldRow["Course"].ToString();
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    //if (OldRow["Course"].ToString().Contains("SWE426DLAB1"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    //if (OldRow["Course"].ToString().Contains("SWE426DLAB2"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    if (OldRow["Course"].ToString().Contains(course4))
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                        //NewRow["Course Title"] = OldRow["Course"].ToString();
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    //if (OldRow["Course"].ToString().Contains("SWE332D2"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    if (OldRow["Course"].ToString().Contains(course5))
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                        //NewRow["Course Title"] = OldRow["Course"].ToString();
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
+                    GridChild.DataSource = dtNew;
+                    GridChild.DataBind();
                 }
-                GridChild.DataSource = dtNew;
-                GridChild.DataBind();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
             }
         }
         #endregion
@@ -400,154 +554,167 @@ namespace Routine_Generator
         private void RowDataBoundMin(string course1, string course2, string course3, string course4, string course5, string dept)
         {
 
-            foreach (GridViewRow row in GridViewMin.Rows)
+            try
             {
-                Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
-                GridView GridChild = (GridView)row.FindControl("GridViewChild");
-                string WeekDay = WeekDayLabel.Text.ToString();
-                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-                SqlConnection con = new SqlConnection(CS);
-                string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
-                DataTable dtOld = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
-                adapter.Fill(dtOld);
-                DataTable dtNew = new DataTable();
-                dtNew.Columns.Add("Course Code");
-                dtNew.Columns.Add("Teacher Initial");
-                dtNew.Columns.Add("Class Time");
-                dtNew.Columns.Add("Room No");
-                foreach (DataRow OldRow in dtOld.Rows)
+                foreach (GridViewRow row in GridViewMin.Rows)
                 {
-
-                    if (OldRow["Course"].ToString().Contains(course1))
+                    Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
+                    GridView GridChild = (GridView)row.FindControl("GridViewChild");
+                    string WeekDay = WeekDayLabel.Text.ToString();
+                    string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                    SqlConnection con = new SqlConnection(CS);
+                    string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
+                    DataTable dtOld = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                    adapter.Fill(dtOld);
+                    DataTable dtNew = new DataTable();
+                    dtNew.Columns.Add("Course Code");
+                    dtNew.Columns.Add("Teacher Initial");
+                    dtNew.Columns.Add("Class Time");
+                    dtNew.Columns.Add("Room No");
+                    foreach (DataRow OldRow in dtOld.Rows)
                     {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
 
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
+                        if (OldRow["Course"].ToString().Contains(course1))
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
 
-                        dtNew.Rows.Add(NewRow);
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        //if (OldRow["Course"].ToString().Contains("SWE423DLAB1"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        //if (OldRow["Course"].ToString().Contains("SWE423DLAB2"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        if (OldRow["Course"].ToString().Contains(course2))
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                            //NewRow["Course Title"] = OldRow["Course"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        //if (OldRow["Course"].ToString().Contains("SWE425DLAB1"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        //if (OldRow["Course"].ToString().Contains("SWE425DLAB2"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        if (OldRow["Course"].ToString().Contains(course3))
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                            //NewRow["Course Title"] = OldRow["Course"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        //if (OldRow["Course"].ToString().Contains("SWE426DLAB1"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        //if (OldRow["Course"].ToString().Contains("SWE426DLAB2"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        if (OldRow["Course"].ToString().Contains(course4))
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                            //NewRow["Course Title"] = OldRow["Course"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        //if (OldRow["Course"].ToString().Contains("SWE332D2"))
+                        //{
+                        //    DataRow NewRow = dtNew.NewRow();
+                        //    NewRow["Course Code"] = OldRow["Course"].ToString();
+                        //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //    NewRow["Course Title"] = OldRow["Course"].ToString();
+                        //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
+
+                        //    dtNew.Rows.Add(NewRow);
+                        //}
+                        if (OldRow["Course"].ToString().Contains(course5))
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                            //NewRow["Course Title"] = OldRow["Course"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
                     }
-                    //if (OldRow["Course"].ToString().Contains("SWE423DLAB1"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    //if (OldRow["Course"].ToString().Contains("SWE423DLAB2"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    if (OldRow["Course"].ToString().Contains(course2))
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                        //NewRow["Course Title"] = OldRow["Course"].ToString();
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    //if (OldRow["Course"].ToString().Contains("SWE425DLAB1"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    //if (OldRow["Course"].ToString().Contains("SWE425DLAB2"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    if (OldRow["Course"].ToString().Contains(course3))
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                        //NewRow["Course Title"] = OldRow["Course"].ToString();
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    //if (OldRow["Course"].ToString().Contains("SWE426DLAB1"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    //if (OldRow["Course"].ToString().Contains("SWE426DLAB2"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    if (OldRow["Course"].ToString().Contains(course4))
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                        //NewRow["Course Title"] = OldRow["Course"].ToString();
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    //if (OldRow["Course"].ToString().Contains("SWE332D2"))
-                    //{
-                    //    DataRow NewRow = dtNew.NewRow();
-                    //    NewRow["Course Code"] = OldRow["Course"].ToString();
-                    //    NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                    //    NewRow["Course Title"] = OldRow["Course"].ToString();
-                    //    NewRow["Class Time"] = OldRow["Schedule"].ToString();
-
-                    //    dtNew.Rows.Add(NewRow);
-                    //}
-                    if (OldRow["Course"].ToString().Contains(course5))
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-                        //NewRow["Course Title"] = OldRow["Course"].ToString();
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
+                    GridChild.DataSource = dtNew;
+                    GridChild.DataBind();
                 }
-                GridChild.DataSource = dtNew;
-                GridChild.DataBind();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
             }
         }
         #endregion
@@ -555,150 +722,163 @@ namespace Routine_Generator
         #region GridView RowDataBound For LAB1
         private void RowDataBoundLAB1(string course1, string course2, string course3, string course4, string course5, string dept)
         {
-            foreach (GridViewRow row in GridViewWeekDay.Rows)
+            try
             {
-                Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
-                GridView GridChild = (GridView)row.FindControl("GridViewChild");
-                string WeekDay = WeekDayLabel.Text.ToString();
-                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-                SqlConnection con = new SqlConnection(CS);
-                string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
-                DataTable dtOld = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
-                adapter.Fill(dtOld);
-                DataTable dtNew = new DataTable();
-                dtNew.Columns.Add("Course Code");
-                dtNew.Columns.Add("Teacher Initial");
-                dtNew.Columns.Add("Class Time");
-                dtNew.Columns.Add("Room No");
-                foreach (DataRow OldRow in dtOld.Rows)
+                foreach (GridViewRow row in GridViewWeekDay.Rows)
                 {
-                    //Course1
-                    if (OldRow["Course"].ToString() == course1.ToString())
+                    Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
+                    GridView GridChild = (GridView)row.FindControl("GridViewChild");
+                    string WeekDay = WeekDayLabel.Text.ToString();
+                    string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                    SqlConnection con = new SqlConnection(CS);
+                    string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
+                    DataTable dtOld = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                    adapter.Fill(dtOld);
+                    DataTable dtNew = new DataTable();
+                    dtNew.Columns.Add("Course Code");
+                    dtNew.Columns.Add("Teacher Initial");
+                    dtNew.Columns.Add("Class Time");
+                    dtNew.Columns.Add("Room No");
+                    foreach (DataRow OldRow in dtOld.Rows)
                     {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //Course1
+                        if (OldRow["Course"].ToString() == course1.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
 
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
 
-                        dtNew.Rows.Add(NewRow);
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course1.ToString() + "1" || OldRow["Course"].ToString() == course1.ToString() + "LAB1")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 2
+                        if (OldRow["Course"].ToString() == course2.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course2.ToString() + "1" || OldRow["Course"].ToString() == course2.ToString() + "LAB1")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 3
+                        if (OldRow["Course"].ToString() == course3.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course3.ToString() + "1" || OldRow["Course"].ToString() == course3.ToString() + "LAB1")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 4
+                        if (OldRow["Course"].ToString() == course4.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course4.ToString() + "1" || OldRow["Course"].ToString() == course4.ToString() + "LAB1")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+                        //Course 5
+                        if (OldRow["Course"].ToString() == course5.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course5.ToString() + "1" || OldRow["Course"].ToString() == course5.ToString() + "LAB1")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
                     }
-                    if (OldRow["Course"].ToString() == course1.ToString() + "1" || OldRow["Course"].ToString() == course1.ToString() + "LAB1")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 2
-                    if (OldRow["Course"].ToString() == course2.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course2.ToString() + "1" || OldRow["Course"].ToString() == course2.ToString() + "LAB1")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 3
-                    if (OldRow["Course"].ToString() == course3.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course3.ToString() + "1" || OldRow["Course"].ToString() == course3.ToString() + "LAB1")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 4
-                    if (OldRow["Course"].ToString() == course4.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course4.ToString() + "1" || OldRow["Course"].ToString() == course4.ToString() + "LAB1")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-                    //Course 5
-                    if (OldRow["Course"].ToString() == course5.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course5.ToString() + "1" || OldRow["Course"].ToString() == course5.ToString() + "LAB1")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
+                    GridChild.DataSource = dtNew;
+                    GridChild.DataBind();
                 }
-                GridChild.DataSource = dtNew;
-                GridChild.DataBind();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
             }
         }
         #endregion
@@ -706,150 +886,163 @@ namespace Routine_Generator
         #region GridView RowDataBound For LAB2
         private void RowDataBoundLAB2(string course1, string course2, string course3, string course4, string course5, string dept)
         {
-            foreach (GridViewRow row in GridViewWeekDay.Rows)
+            try
             {
-                Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
-                GridView GridChild = (GridView)row.FindControl("GridViewChild");
-                string WeekDay = WeekDayLabel.Text.ToString();
-                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-                SqlConnection con = new SqlConnection(CS);
-                string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
-                DataTable dtOld = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
-                adapter.Fill(dtOld);
-                DataTable dtNew = new DataTable();
-                dtNew.Columns.Add("Course Code");
-                dtNew.Columns.Add("Teacher Initial");
-                dtNew.Columns.Add("Class Time");
-                dtNew.Columns.Add("Room No");
-                foreach (DataRow OldRow in dtOld.Rows)
+                foreach (GridViewRow row in GridViewWeekDay.Rows)
                 {
-                    //Course1
-                    if (OldRow["Course"].ToString() == course1.ToString())
+                    Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
+                    GridView GridChild = (GridView)row.FindControl("GridViewChild");
+                    string WeekDay = WeekDayLabel.Text.ToString();
+                    string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                    SqlConnection con = new SqlConnection(CS);
+                    string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
+                    DataTable dtOld = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                    adapter.Fill(dtOld);
+                    DataTable dtNew = new DataTable();
+                    dtNew.Columns.Add("Course Code");
+                    dtNew.Columns.Add("Teacher Initial");
+                    dtNew.Columns.Add("Class Time");
+                    dtNew.Columns.Add("Room No");
+                    foreach (DataRow OldRow in dtOld.Rows)
                     {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //Course1
+                        if (OldRow["Course"].ToString() == course1.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
 
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
 
-                        dtNew.Rows.Add(NewRow);
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course1.ToString() + "2" || OldRow["Course"].ToString() == course1.ToString() + "LAB2")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 2
+                        if (OldRow["Course"].ToString() == course2.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course2.ToString() + "2" || OldRow["Course"].ToString() == course2.ToString() + "LAB2")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 3
+                        if (OldRow["Course"].ToString() == course3.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course3.ToString() + "2" || OldRow["Course"].ToString() == course3.ToString() + "LAB2")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 4
+                        if (OldRow["Course"].ToString() == course4.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course4.ToString() + "2" || OldRow["Course"].ToString() == course4.ToString() + "LAB2")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+                        //Course 5
+                        if (OldRow["Course"].ToString() == course5.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course5.ToString() + "2" || OldRow["Course"].ToString() == course5.ToString() + "LAB2")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
                     }
-                    if (OldRow["Course"].ToString() == course1.ToString() + "2" || OldRow["Course"].ToString() == course1.ToString() + "LAB2")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 2
-                    if (OldRow["Course"].ToString() == course2.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course2.ToString() + "2" || OldRow["Course"].ToString() == course2.ToString() + "LAB2")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 3
-                    if (OldRow["Course"].ToString() == course3.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course3.ToString() + "2" || OldRow["Course"].ToString() == course3.ToString() + "LAB2")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 4
-                    if (OldRow["Course"].ToString() == course4.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course4.ToString() + "2" || OldRow["Course"].ToString() == course4.ToString() + "LAB2")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-                    //Course 5
-                    if (OldRow["Course"].ToString() == course5.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course5.ToString() + "2" || OldRow["Course"].ToString() == course5.ToString() + "LAB2")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
+                    GridChild.DataSource = dtNew;
+                    GridChild.DataBind();
                 }
-                GridChild.DataSource = dtNew;
-                GridChild.DataBind();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
             }
         }
         #endregion
@@ -857,150 +1050,163 @@ namespace Routine_Generator
         #region GridViewMin RowDataBound For LAB1
         private void RowDataBoundLAB1Min(string course1, string course2, string course3, string course4, string course5, string dept)
         {
-            foreach (GridViewRow row in GridViewMin.Rows)
+            try
             {
-                Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
-                GridView GridChild = (GridView)row.FindControl("GridViewChild");
-                string WeekDay = WeekDayLabel.Text.ToString();
-                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-                SqlConnection con = new SqlConnection(CS);
-                string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
-                DataTable dtOld = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
-                adapter.Fill(dtOld);
-                DataTable dtNew = new DataTable();
-                dtNew.Columns.Add("Course Code");
-                dtNew.Columns.Add("Teacher Initial");
-                dtNew.Columns.Add("Class Time");
-                dtNew.Columns.Add("Room No");
-                foreach (DataRow OldRow in dtOld.Rows)
+                foreach (GridViewRow row in GridViewMin.Rows)
                 {
-                    //Course1
-                    if (OldRow["Course"].ToString() == course1.ToString())
+                    Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
+                    GridView GridChild = (GridView)row.FindControl("GridViewChild");
+                    string WeekDay = WeekDayLabel.Text.ToString();
+                    string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                    SqlConnection con = new SqlConnection(CS);
+                    string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
+                    DataTable dtOld = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                    adapter.Fill(dtOld);
+                    DataTable dtNew = new DataTable();
+                    dtNew.Columns.Add("Course Code");
+                    dtNew.Columns.Add("Teacher Initial");
+                    dtNew.Columns.Add("Class Time");
+                    dtNew.Columns.Add("Room No");
+                    foreach (DataRow OldRow in dtOld.Rows)
                     {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //Course1
+                        if (OldRow["Course"].ToString() == course1.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
 
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
 
-                        dtNew.Rows.Add(NewRow);
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course1.ToString() + "1" || OldRow["Course"].ToString() == course1.ToString() + "LAB1")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 2
+                        if (OldRow["Course"].ToString() == course2.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course2.ToString() + "1" || OldRow["Course"].ToString() == course2.ToString() + "LAB1")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 3
+                        if (OldRow["Course"].ToString() == course3.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course3.ToString() + "1" || OldRow["Course"].ToString() == course3.ToString() + "LAB1")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 4
+                        if (OldRow["Course"].ToString() == course4.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course4.ToString() + "1" || OldRow["Course"].ToString() == course4.ToString() + "LAB1")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+                        //Course 5
+                        if (OldRow["Course"].ToString() == course5.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course5.ToString() + "1" || OldRow["Course"].ToString() == course5.ToString() + "LAB1")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
                     }
-                    if (OldRow["Course"].ToString() == course1.ToString() + "1" || OldRow["Course"].ToString() == course1.ToString() + "LAB1")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 2
-                    if (OldRow["Course"].ToString() == course2.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course2.ToString() + "1" || OldRow["Course"].ToString() == course2.ToString() + "LAB1")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 3
-                    if (OldRow["Course"].ToString() == course3.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course3.ToString() + "1" || OldRow["Course"].ToString() == course3.ToString() + "LAB1")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 4
-                    if (OldRow["Course"].ToString() == course4.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course4.ToString() + "1" || OldRow["Course"].ToString() == course4.ToString() + "LAB1")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-                    //Course 5
-                    if (OldRow["Course"].ToString() == course5.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course5.ToString() + "1" || OldRow["Course"].ToString() == course5.ToString() + "LAB1")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
+                    GridChild.DataSource = dtNew;
+                    GridChild.DataBind();
                 }
-                GridChild.DataSource = dtNew;
-                GridChild.DataBind();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
             }
         }
         #endregion
@@ -1008,149 +1214,162 @@ namespace Routine_Generator
         #region GridViewMin RowDataBound For LAB2
         private void RowDataBoundLAB2Min(string course1, string course2, string course3, string course4, string course5, string dept)
         {
-            foreach (GridViewRow row in GridViewMin.Rows)
+            try
             {
-                Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
-                GridView GridChild = (GridView)row.FindControl("GridViewChild");
-                string WeekDay = WeekDayLabel.Text.ToString();
-                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-                SqlConnection con = new SqlConnection(CS);
-                string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
-                DataTable dtOld = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
-                adapter.Fill(dtOld);
-                DataTable dtNew = new DataTable();
-                dtNew.Columns.Add("Course Code");
-                dtNew.Columns.Add("Teacher Initial");
-                dtNew.Columns.Add("Class Time");
-                dtNew.Columns.Add("Room No");
-                foreach (DataRow OldRow in dtOld.Rows)
+                foreach (GridViewRow row in GridViewMin.Rows)
                 {
-                    //Course1
-                    if (OldRow["Course"].ToString() == course1.ToString())
+                    Label WeekDayLabel = (Label)row.FindControl("LabelDistinctDay");
+                    GridView GridChild = (GridView)row.FindControl("GridViewChild");
+                    string WeekDay = WeekDayLabel.Text.ToString();
+                    string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                    SqlConnection con = new SqlConnection(CS);
+                    string sql = "SELECT * FROM " + dept + " WHERE Day='" + WeekDay + "'";
+                    DataTable dtOld = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                    adapter.Fill(dtOld);
+                    DataTable dtNew = new DataTable();
+                    dtNew.Columns.Add("Course Code");
+                    dtNew.Columns.Add("Teacher Initial");
+                    dtNew.Columns.Add("Class Time");
+                    dtNew.Columns.Add("Room No");
+                    foreach (DataRow OldRow in dtOld.Rows)
                     {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+                        //Course1
+                        if (OldRow["Course"].ToString() == course1.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
 
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
 
-                        dtNew.Rows.Add(NewRow);
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course1.ToString() + "2" || OldRow["Course"].ToString() == course1.ToString() + "LAB2")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 2
+                        if (OldRow["Course"].ToString() == course2.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course2.ToString() + "2" || OldRow["Course"].ToString() == course2.ToString() + "LAB2")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 3
+                        if (OldRow["Course"].ToString() == course3.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course3.ToString() + "2" || OldRow["Course"].ToString() == course3.ToString() + "LAB2")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
+
+                        //Course 4
+                        if (OldRow["Course"].ToString() == course4.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course4.ToString() + "2" || OldRow["Course"].ToString() == course4.ToString() + "LAB2")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        //Course 5
+                        if (OldRow["Course"].ToString() == course5.ToString())
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+                        if (OldRow["Course"].ToString() == course5.ToString() + "2" || OldRow["Course"].ToString() == course5.ToString() + "LAB2")
+                        {
+                            DataRow NewRow = dtNew.NewRow();
+                            NewRow["Course Code"] = OldRow["Course"].ToString();
+                            NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
+
+                            NewRow["Class Time"] = OldRow["Schedule"].ToString();
+                            NewRow["Room No"] = OldRow["Class"].ToString();
+
+                            dtNew.Rows.Add(NewRow);
+                        }
+
                     }
-                    if (OldRow["Course"].ToString() == course1.ToString() + "2" || OldRow["Course"].ToString() == course1.ToString() + "LAB2")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 2
-                    if (OldRow["Course"].ToString() == course2.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course2.ToString() + "2" || OldRow["Course"].ToString() == course2.ToString() + "LAB2")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 3
-                    if (OldRow["Course"].ToString() == course3.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course3.ToString() + "2" || OldRow["Course"].ToString() == course3.ToString() + "LAB2")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
-
-                    //Course 4
-                    if (OldRow["Course"].ToString() == course4.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course4.ToString() + "2" || OldRow["Course"].ToString() == course4.ToString() + "LAB2")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    //Course 5
-                    if (OldRow["Course"].ToString() == course5.ToString())
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-                    if (OldRow["Course"].ToString() == course5.ToString() + "2" || OldRow["Course"].ToString() == course5.ToString() + "LAB2")
-                    {
-                        DataRow NewRow = dtNew.NewRow();
-                        NewRow["Course Code"] = OldRow["Course"].ToString();
-                        NewRow["Teacher Initial"] = OldRow["Teacher"].ToString();
-
-                        NewRow["Class Time"] = OldRow["Schedule"].ToString();
-                        NewRow["Room No"] = OldRow["Class"].ToString();
-
-                        dtNew.Rows.Add(NewRow);
-                    }
-
+                    GridChild.DataSource = dtNew;
+                    GridChild.DataBind();
                 }
-                GridChild.DataSource = dtNew;
-                GridChild.DataBind();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+                
             }
         }
         #endregion
@@ -1346,19 +1565,32 @@ namespace Routine_Generator
         public string HeaderText()
         {
             HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
-            if (gatheredCookie["semester"].ToString() == "")
+            try
             {
-                GridViewWeekDay.ShowHeader = false;
-                GridViewMin.ShowHeader = false;
-                //GridViewWeekDay.ShowFooter = false;
-                //GridViewMin.ShowFooter = false;
+                if (gatheredCookie["semester"].ToString() == "")
+                {
+                    GridViewWeekDay.ShowHeader = false;
+                    GridViewMin.ShowHeader = false;
+                    //GridViewWeekDay.ShowFooter = false;
+                    //GridViewMin.ShowFooter = false;
+                    return "";
+                }
+                else
+                {
+                    return gatheredCookie["semester"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
                 return "";
             }
-            else
-            {
-                return gatheredCookie["semester"].ToString();
-            }
-        } 
+        }
         #endregion
 
         #endregion

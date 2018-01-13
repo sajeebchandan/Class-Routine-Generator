@@ -16,124 +16,196 @@ namespace Routine_Generator
 
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(RadioButtonListDept.SelectedItem.Text.ToString()))
+            try
             {
-                if (calculateCredit() >= 6)
+                if (!String.IsNullOrEmpty(RadioButtonListDept.SelectedItem.Text.ToString()))
                 {
-                    if (calculateCredit() <= 15)
+                    if (calculateCredit() >= 6)
                     {
-                        HttpCookie cookieGenerator = new HttpCookie("CourseCodes");
-
-                        if (!String.IsNullOrEmpty(TextBoxCourse1.Text.ToString()))
+                        if (calculateCredit() <= 15)
                         {
-                            cookieGenerator["course1"] = TextBoxCourse1.Text.ToString();
+                            HttpCookie cookieGenerator = new HttpCookie("CourseCodes");
+
+                            if (!String.IsNullOrEmpty(TextBoxCourse1.Text.ToString()))
+                            {
+                                cookieGenerator["course1"] = TextBoxCourse1.Text.ToString();
+                            }
+                            else
+                            {
+                                cookieGenerator["course1"] = "NULL";
+                            }
+
+
+                            if (!String.IsNullOrEmpty(TextBoxCourse2.Text.ToString()))
+                            {
+                                cookieGenerator["course2"] = TextBoxCourse2.Text.ToString();
+                            }
+                            else
+                            {
+                                cookieGenerator["course2"] = "NULL";
+                            }
+
+
+                            if (!String.IsNullOrEmpty(TextBoxCourse3.Text.ToString()))
+                            {
+                                cookieGenerator["course3"] = TextBoxCourse3.Text.ToString();
+                            }
+                            else
+                            {
+                                cookieGenerator["course3"] = "NULL";
+                            }
+
+
+                            if (!String.IsNullOrEmpty(TextBoxCourse4.Text.ToString()))
+                            {
+                                cookieGenerator["course4"] = TextBoxCourse4.Text.ToString();
+                            }
+                            else
+                            {
+                                cookieGenerator["course4"] = "NULL";
+                            }
+
+
+                            if (!String.IsNullOrEmpty(TextBoxCourse5.Text.ToString()))
+                            {
+                                cookieGenerator["course5"] = TextBoxCourse5.Text.ToString();
+                            }
+                            else
+                            {
+                                cookieGenerator["course5"] = "NULL";
+                            }
+
+                            cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
+                            cookieGenerator["semester"] = "";
+                            Response.Cookies.Add(cookieGenerator);
+
+                            Response.Redirect("View Routine.aspx", false);
                         }
                         else
                         {
-                            cookieGenerator["course1"] = "NULL";
+                            LabelMsg.Visible = true;
+                            LabelMsg.Text = "Limit exceeded. MAX Credit 15";
+                            LabelMsg.ForeColor = System.Drawing.Color.Red;
                         }
-
-
-                        if (!String.IsNullOrEmpty(TextBoxCourse2.Text.ToString()))
-                        {
-                            cookieGenerator["course2"] = TextBoxCourse2.Text.ToString();
-                        }
-                        else
-                        {
-                            cookieGenerator["course2"] = "NULL";
-                        }
-
-
-                        if (!String.IsNullOrEmpty(TextBoxCourse3.Text.ToString()))
-                        {
-                            cookieGenerator["course3"] = TextBoxCourse3.Text.ToString();
-                        }
-                        else
-                        {
-                            cookieGenerator["course3"] = "NULL";
-                        }
-
-
-                        if (!String.IsNullOrEmpty(TextBoxCourse4.Text.ToString()))
-                        {
-                            cookieGenerator["course4"] = TextBoxCourse4.Text.ToString();
-                        }
-                        else
-                        {
-                            cookieGenerator["course4"] = "NULL";
-                        }
-
-
-                        if (!String.IsNullOrEmpty(TextBoxCourse5.Text.ToString()))
-                        {
-                            cookieGenerator["course5"] = TextBoxCourse5.Text.ToString();
-                        }
-                        else
-                        {
-                            cookieGenerator["course5"] = "NULL";
-                        }
-
-                        cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
-                        cookieGenerator["semester"] = ""; 
-                        Response.Cookies.Add(cookieGenerator);
-
-                        Response.Redirect("View Routine.aspx");
                     }
                     else
                     {
                         LabelMsg.Visible = true;
-                        LabelMsg.Text = "Limit exceeded. MAX Credit 15";
+                        LabelMsg.Text = "Enter 2 courses. MIN Credit 6";
                         LabelMsg.ForeColor = System.Drawing.Color.Red;
-                    } 
+                    }
                 }
                 else
                 {
                     LabelMsg.Visible = true;
-                    LabelMsg.Text = "Enter 2 courses. MIN Credit 6";
+                    LabelMsg.Text = "Select department";
                     LabelMsg.ForeColor = System.Drawing.Color.Red;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                LabelMsg.Visible = true;
-                LabelMsg.Text = "Select department";
-                LabelMsg.ForeColor = System.Drawing.Color.Red;
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
             }
         }
 
         protected void TextBoxCourse1_TextChanged(object sender, EventArgs e)
         {
-            LabelMsg.Visible = false;
-            LabelCourseCounter.Text = calculateCredit().ToString();
-            TextBoxCourse2.Focus();
+            try
+            {
+                LabelMsg.Visible = false;
+                LabelCourseCounter.Text = calculateCredit().ToString();
+                TextBoxCourse2.Focus();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+            }
         }
 
         protected void TextBoxCourse2_TextChanged(object sender, EventArgs e)
         {
-            LabelMsg.Visible = false;
-            LabelCourseCounter.Text = calculateCredit().ToString();
-            TextBoxCourse3.Focus();
+            try
+            {
+                LabelMsg.Visible = false;
+                LabelCourseCounter.Text = calculateCredit().ToString();
+                TextBoxCourse3.Focus();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+            }
         }
 
         protected void TextBoxCourse3_TextChanged(object sender, EventArgs e)
         {
-            LabelMsg.Visible = false;
-            LabelCourseCounter.Text = calculateCredit().ToString();
-            TextBoxCourse4.Focus();
+            try
+            {
+                LabelMsg.Visible = false;
+                LabelCourseCounter.Text = calculateCredit().ToString();
+                TextBoxCourse4.Focus();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+            }
         }
 
         protected void TextBoxCourse4_TextChanged(object sender, EventArgs e)
         {
-            LabelMsg.Visible = false;
-            LabelCourseCounter.Text = calculateCredit().ToString();
-            TextBoxCourse5.Focus();
+            try
+            {
+                LabelMsg.Visible = false;
+                LabelCourseCounter.Text = calculateCredit().ToString();
+                TextBoxCourse5.Focus();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+            }
         }
 
         protected void TextBoxCourse5_TextChanged(object sender, EventArgs e)
         {
-            LabelMsg.Visible = false;
-            LabelCourseCounter.Text = calculateCredit().ToString();
-            TextBoxCourse1.Focus();
+            try
+            {
+                LabelMsg.Visible = false;
+                LabelCourseCounter.Text = calculateCredit().ToString();
+                TextBoxCourse1.Focus();
+            }
+            catch (Exception ex)
+            {
+                if (ex != null)
+                {
+                    Logger.Log(ex);
+                    Server.ClearError();
+                    Server.Transfer("~/Application Error.aspx");
+                }
+            }
         }
 
 

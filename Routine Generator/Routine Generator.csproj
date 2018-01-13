@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Application Error.aspx" />
     <Content Include="bootstrap-4.0.0-alpha.6-dist\css\bootstrap-grid.css" />
     <Content Include="bootstrap-4.0.0-alpha.6-dist\css\bootstrap-grid.min.css" />
     <Content Include="bootstrap-4.0.0-alpha.6-dist\css\bootstrap-reboot.css" />
@@ -76,6 +77,7 @@
     <Content Include="bootstrap-4.0.0-alpha.6-dist\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap.cosmo.css" />
     <Content Include="Content\bootstrap.cosmo.min.css" />
+    <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="packages.config" />
     <Content Include="Admin.Master" />
@@ -126,6 +128,16 @@
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Application Error.aspx.cs">
+      <DependentUpon>Application Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Application Error.aspx.designer.cs">
+      <DependentUpon>Application Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,6 +145,7 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logger.cs" />
     <Compile Include="Processor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routine By Course Code.aspx.cs">
