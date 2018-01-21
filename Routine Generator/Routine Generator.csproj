@@ -82,6 +82,7 @@
     <Content Include="bootstrap-4.0.0-alpha.6-dist\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap.cosmo.css" />
     <Content Include="Content\bootstrap.cosmo.min.css" />
+    <Content Include="DBScript.html" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="packages.config" />

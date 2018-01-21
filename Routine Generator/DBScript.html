@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <code>
+        CREATE TABLE [dbo].[Ex] (
+        [ID]          INT            IDENTITY (1, 1) NOT NULL,
+        [DateAndTime] NVARCHAR (MAX) NOT NULL,
+        [message]     VARCHAR (MAX)  NOT NULL,
+        [IPaddress]   VARCHAR (MAX)  NOT NULL,
+        CONSTRAINT [PK_Ex] PRIMARY KEY CLUSTERED ([ID] ASC)
+        );
+
+
+    </code>
+    <hr />
+    <code>
+        CREATE TABLE [dbo].[Routine] (
+        [Id]       INT            IDENTITY (1, 1) NOT NULL,
+        [Class]    NVARCHAR (10)  NULL,
+        [Course]   NVARCHAR (100) NULL,
+        [Teacher]  NVARCHAR (100) NULL,
+        [Schedule] NVARCHAR (100) NULL,
+        [Day]      NVARCHAR (100) NULL,
+        [DayID]    INT            NULL,
+        PRIMARY KEY CLUSTERED ([Id] ASC),
+        FOREIGN KEY ([Day]) REFERENCES [dbo].[WeekParent] ([WeekDayName])
+        );
+
+
+    </code>
+    <hr />
+    <code>
+        CREATE TABLE [dbo].[Routine_Empty] (
+        [Id]       INT            IDENTITY (1, 1) NOT NULL,
+        [Class]    NVARCHAR (10)  NULL,
+        [Course]   NVARCHAR (100) NULL,
+        [Teacher]  NVARCHAR (100) NULL,
+        [Schedule] NVARCHAR (100) NULL,
+        [Day]      NVARCHAR (100) NULL,
+        [DayID]    INT            NULL,
+        PRIMARY KEY CLUSTERED ([Id] ASC),
+        FOREIGN KEY ([Day]) REFERENCES [dbo].[WeekParent] ([WeekDayName])
+        );
+
+
+    </code>
+    <hr />
+    <code>
+        CREATE TABLE [dbo].[Routine_Empty_Book_Slot] (
+        [Id]       INT            NOT NULL,
+        [Class]    NVARCHAR (10)  NULL,
+        [Course]   NVARCHAR (100) NULL,
+        [Teacher]  NVARCHAR (100) NULL,
+        [Schedule] NVARCHAR (100) NULL,
+        [Day]      NVARCHAR (100) NULL,
+        [DayID]    INT            NULL,
+        [Dates]    NVARCHAR (100) NOT NULL,
+        [DateId]   INT            NOT NULL,
+        PRIMARY KEY CLUSTERED ([Id] ASC, [Dates] ASC),
+        FOREIGN KEY ([Id]) REFERENCES [dbo].[Routine_Empty] ([Id])
+        );
+
+
+    </code>
+    <hr />
+    <hr />
+    <hr />
+</body>
+</html>
