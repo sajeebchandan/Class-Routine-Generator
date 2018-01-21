@@ -100,9 +100,32 @@ namespace Routine_Generator
             con.Open();
             objbulk.WriteToServer(Exceldt);
             con.Close();
+            InsertNullRecords();
             Label1.ForeColor = System.Drawing.Color.Blue;
             Label1.Text = "Data Injection Successfull";
             HyperLink1.Text = "Click here to see it in action";
+            HyperLink1.NavigateUrl = "Home.aspx";
+        }
+
+        private void InsertNullRecords()
+        {
+            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            string query = "SELECT * FROM Routine WHERE Course IS NULL AND Teacher IS NULL";
+            SqlConnection con = new SqlConnection(CS);
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            SqlBulkCopy nullBulk = new SqlBulkCopy(con);
+            nullBulk.DestinationTableName = "Routine_Empty";
+            nullBulk.ColumnMappings.Add("Class", "Class");
+            nullBulk.ColumnMappings.Add("Course", "Course");
+            nullBulk.ColumnMappings.Add("Teacher", "Teacher");
+            nullBulk.ColumnMappings.Add("Schedule", "Schedule");
+            nullBulk.ColumnMappings.Add("Day", "Day");
+            nullBulk.ColumnMappings.Add("DayID", "DayID");
+            con.Open();
+            nullBulk.WriteToServer(dt);
+            con.Close();
         }
     }
 }

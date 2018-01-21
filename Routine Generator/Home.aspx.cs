@@ -13,5 +13,40 @@ namespace Routine_Generator
         {
 
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            HttpCookie cookieGenerator = new HttpCookie("EmptySlotGenerator");
+            cookieGenerator["dept"] = GetEmptyTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
+
+            Response.Cookies.Add(cookieGenerator);
+            Response.Redirect("View Empty Slot.aspx");
+        }
+
+        #region Get Empty Table Name By Selected Department
+        private string GetEmptyTableNameByDept(string dept)
+        {
+            if (dept == "SWE")
+            {
+                return "Routine_Empty";
+            }
+            else if (dept == "CSE")
+            {
+                return "RoutineCSE_Empty";
+            }
+            else if (dept == "MCT")
+            {
+                return "RoutineMCT_Empty";
+            }
+            else if (dept == "Pharmacy")
+            {
+                return "RoutinePharmacy_Empty";
+            }
+            else
+            {
+                return "";
+            }
+        }
+        #endregion
     }
 }

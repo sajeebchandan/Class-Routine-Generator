@@ -32,13 +32,13 @@ namespace Routine_Generator
 
         protected void Application_Error(object sender, EventArgs e)
         {
-            Exception ex = Server.GetLastError();
-            if (ex != null)
-            {
-                Logger.Log(ex);
-                Server.ClearError();
-                Server.Transfer("~/Application Error.aspx");
-            }
+            //Exception ex = Server.GetLastError();
+            //if (ex != null)
+            //{
+            //    Logger.Log(ex);
+            //    Server.ClearError();
+            //    Server.Transfer("~/Application Error.aspx");
+            //}
         }
 
         protected void Session_End(object sender, EventArgs e)
