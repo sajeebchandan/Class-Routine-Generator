@@ -324,5 +324,26 @@ namespace Routine_Generator
             GridViewMin.Visible = true;
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "onClickbtnMin()", true);
         }
+
+        protected void GridViewChild_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if(e.CommandName== "remove")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                string query = "DELETE FROM Routine_Empty_Book_Slot WHERE Id=@Id";
+                SqlConnection con = new SqlConnection(CS);
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@Id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                HttpCookie gatheredCookie = Request.Cookies["BookedList"];
+                LoadData(gatheredCookie["dept"].ToString());
+                LoadDataMin(gatheredCookie["dept"].ToString());
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "alert('Schedule Released Successfully');", true);
+            }
+            
+        }
     }
 }

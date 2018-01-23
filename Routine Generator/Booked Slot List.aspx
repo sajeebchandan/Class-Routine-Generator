@@ -122,7 +122,7 @@
             <div id="Progress">
                 <h3>
                     <p style="text-align: center">
-                        <b class="UpdateProgress">Filtering...<br />
+                        <b class="UpdateProgress">Please Wait...<br />
                         </b>
                     </p>
                 </h3>
@@ -150,7 +150,7 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
 
-            <asp:GridView ID="GridViewWeekDay" runat="server" ShowHeader="true" ShowFooter="true" AutoGenerateColumns="False" Width="96%" Style="margin-left: 2%" GridLines="None" CssClass="table-responsive" OnRowDataBound="GridViewWeekDay_RowDataBound">
+            <asp:GridView ID="GridViewWeekDay" runat="server" ShowHeader="true" ShowFooter="true" AutoGenerateColumns="False" Width="96%" Style="margin-left: 2%" GridLines="None" CssClass="table-responsive" OnRowDataBound="GridViewWeekDay_RowDataBound" EmptyDataText="There is no schedule booked">
                 <Columns>
                     <asp:TemplateField>
                         <HeaderTemplate>
@@ -202,7 +202,7 @@
                                 </table>
                             </div>
                             <div>
-                                <asp:GridView ID="GridViewChild" runat="server" AutoGenerateColumns="False" Width="100%" GridLines="None" ShowHeader="False">
+                                <asp:GridView ID="GridViewChild" runat="server" AutoGenerateColumns="False" Width="100%" GridLines="None" ShowHeader="False" OnRowCommand="GridViewChild_RowCommand" EmptyDataText="There is no schedule booked">
                                     <Columns>
                                         <asp:TemplateField>
                                             <ItemTemplate>
@@ -222,7 +222,8 @@
                                                             <asp:Label ID="LabelTime" runat="server" Text='<%# Eval("Schedule").ToString().Replace(" ", "") %>'></asp:Label>
                                                         </td>
                                                         <td style="background-color: beige; text-align: center; width: 15%; font-weight: bold; font-size: 18px">
-                                                            <asp:Label ID="LabelRoom" runat="server" Text='<%# Eval("Class").ToString().Replace(" ", "") %>'></asp:Label>
+                                                            <asp:Label ID="LabelRoom" runat="server" Text='<%# Eval("Class").ToString().Replace(" ", "") %>'></asp:Label><br />
+                                                            <asp:LinkButton ID="LinkButtonRemove" runat="server" CommandName="remove" ToolTip="Release This Schedule" CommandArgument='<%# Eval("Id") %>' CssClass="btn btn-danger"><i aria-hidden="true" class="fa fa-times fa-2x"></i></asp:LinkButton>
                                                         </td>
                                                     </tr>
                                                 </table>

@@ -12,7 +12,9 @@
     <script src="Routine Generator/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="Routine Generator/assets/js/html2canvas.js"></script>
     <script src="Routine Generator/assets/js/download.js"></script>
-    
+    <link href="font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome-ie7.css" rel="stylesheet" />
 
 
 

@@ -336,7 +336,8 @@ namespace Routine_Generator
                             //Label lbl = (Label)GridViewWeekDay.FindControl("LabelParentRowIndex");
                             //int parentId = Convert.ToInt32(lbl.Text.ToString());
                             LinkButton lblMsg = (LinkButton)GridChild.Rows[rowIndex].FindControl("LinkButtonMessage");
-                            lblMsg.Text = "Available";
+                            lblMsg.Visible = true;
+                            //lblMsg.Text = "Available";
                             lblMsg.CommandName = "TryBook";
                             lblMsg.ForeColor = Color.Green;
 
@@ -345,9 +346,10 @@ namespace Routine_Generator
                         else
                         {
                             LinkButton lblMsg = (LinkButton)GridChild.Rows[rowIndex].FindControl("LinkButtonMessage");
-                            lblMsg.Text = "Not Available";
-                            lblMsg.CommandName = "CancelBook";
-                            lblMsg.ForeColor = Color.Red;
+                            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "alert('Schedule is not available');", true);
+                            //lblMsg.Text = "Not Available";
+                            //lblMsg.CommandName = "CancelBook";
+                            //lblMsg.ForeColor = Color.Red;
                         }
                     }
                     else
@@ -413,7 +415,7 @@ namespace Routine_Generator
                 int DateId = Convert.ToInt32(MonthSingle + str_Date);
                 //TextBoxDateOfAvailability.Text = ViewState["SelectedDate"].ToString();
 
-                if (!String.IsNullOrEmpty(TextBoxCourse.Text) || !String.IsNullOrEmpty(TextBoxTeacherInitial.Text) || !String.IsNullOrEmpty(ViewState["SelectedDate"].ToString()))
+                if (!String.IsNullOrEmpty(TextBoxCourse.Text) && !String.IsNullOrEmpty(TextBoxTeacherInitial.Text) && !String.IsNullOrEmpty(ViewState["SelectedDate"].ToString()))
                 {
                     //if (GetDayOfDate(TextBoxDateOfAvailability.Text.ToString(), LabelDay.Text.ToString()) == true)
                     //{

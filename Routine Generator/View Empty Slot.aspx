@@ -3,6 +3,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
     <style type="text/css">
         .form-controlMod {
             width: 24%;
@@ -101,6 +102,10 @@
                 transform: translateY(5px);
             }
         }
+
+        .auto-style1 {
+            text-decoration: underline;
+        }
     </style>
     <script type="text/javascript">
         function onClickbtn() {
@@ -138,7 +143,7 @@
             <div id="Progress">
                 <h3>
                     <p style="text-align: center">
-                        <b class="UpdateProgress">Filtering...<br />
+                        <b class="UpdateProgress">Loading...<br />
                         </b>
                     </p>
                 </h3>
@@ -159,7 +164,7 @@
 
     <h2 class="text-center bg-info" id="routinetitle">Routine of Spring 2018</h2>
     <input type="button" id="btnSave" value="Save as Image" class="btn btn-primary btn-md" style="margin-left: 2%;" onclick="onClickbtn()" />
-    
+
     <asp:Button ID="ButtonGetSlot" runat="server" class="btn btn-primary btn-md" Style="margin-left: 2%;" Text="View Booked Slot List" OnClick="ButtonGetSlot_Click" CausesValidation="false" />
     <span class="contas" id="contass">
         <div class="dibi"></div>
@@ -240,33 +245,32 @@
                                                             <asp:Label ID="LabelRoom" runat="server" Text='<%# Eval("Class").ToString().Replace(" ", "") %>'></asp:Label>
                                                         </td>
                                                         <td style="background-color: beige; text-align: center; width: 60%; /*font-weight: bold; */ font-size: 18px">
-                                                            <%--<asp:TextBox ID="TextBoxDateOfAvailability" runat="server" placeholder="Enter Date" Visible="false" CssClass="form-controlMod"></asp:TextBox>
 
-                                                            <asp:CalendarExtender ID="TextBoxDateOfAvailability_CalendarExtender" runat="server" Enabled="True" TargetControlID="TextBoxDateOfAvailability" Format="dd/MM/yyyy" StartDate='<%# DateTime.Now.AddDays(1) %>'></asp:CalendarExtender>
+                                                            <table class="nav-justified">
+                                                                <tr>
+                                                                    <td><span style="font-size: 10px; font-weight: bold" class="auto-style1">Teacher Initial</span><br />
+                                                                        <asp:ComboBox ID="ComboBoxTeacherInitial" runat="server" AutoCompleteMode="Suggest" DataSourceID="SqlDataSourceTeacherInitial" DataTextField="Teacher" DataValueField="Teacher" ItemInsertLocation="OrdinalText" MaxLength="0" Style="display: inline;">
+                                                                        </asp:ComboBox>
+                                                                        <asp:SqlDataSource ID="SqlDataSourceTeacherInitial" runat="server" ConnectionString="<%$ ConnectionStrings:RUTINConnectionString %>" SelectCommand="SELECT DISTINCT Teacher FROM Routine WHERE Teacher IS NOT NULL"></asp:SqlDataSource>
+                                                                    </td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span style="font-size: 10px; font-weight: bold" class="auto-style1">Course Code</span><br />
+                                                                        <asp:ComboBox ID="ComboBoxCourse" runat="server" AutoCompleteMode="Suggest" DataSourceID="SqlDataSourceCourseCode" DataTextField="Course" DataValueField="Course" ItemInsertLocation="OrdinalText" MaxLength="0" Style="display: inline;">
+                                                                        </asp:ComboBox>
+                                                                        <asp:SqlDataSource ID="SqlDataSourceCourseCode" runat="server" ConnectionString="<%$ ConnectionStrings:RUTINConnectionString %>" SelectCommand="SELECT DISTINCT Course FROM Routine WHERE Course IS NOT NULL"></asp:SqlDataSource>
+                                                                    </td>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <asp:LinkButton ID="LinkButtonBook" runat="server" CausesValidation="false" ToolTip="Book This Schedule" CommandArgument='<%# Eval("Id") %>' CommandName="Book" CssClass="btn btn-success"><i class="icon-ok-sign fa-2x"></i></asp:LinkButton>
+                                                                        <asp:LinkButton ID="LinkButtonCancelBook" runat="server" CausesValidation="False" ToolTip="Cancel Changes" CommandArgument='<%# Eval("Id") %>' CommandName="CancelBook" CssClass="btn btn-danger"><i aria-hidden="true" class="fa fa-times fa-2x"></i></asp:LinkButton></td>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                            </table>
 
-                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorDate" runat="server" ControlToValidate="TextBoxDateOfAvailability" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                                                            <br />--%>
-                                                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidatorDate" runat="server" ControlToValidate="TextBoxDateOfAvailability" Display="Dynamic" ErrorMessage="*Required" Style="color: #FF3300"></asp:RequiredFieldValidator><br />
-                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidatorDate" runat="server" ControlToValidate="TextBoxDateOfAvailability" Style="color: #FF0000;" ErrorMessage="Give date in dd/MM/yyyy Format" ValidationExpression="^(((((0[1-9])|(1\d)|(2[0-8]))\/((0[1-9])|(1[0-2])))|((31\/((0[13578])|(1[02])))|((29|30)\/((0[1,3-9])|(1[0-2])))))\/((20[0-9][0-9])|(19[0-9][0-9])))|((29\/02\/(19|20)(([02468][048])|([13579][26]))))$ "></asp:RegularExpressionValidator><br />--%>
-                                                            <%--<asp:LinkButton ID="LinkButtonCheckAvailability" runat="server" CommandArgument='<%# Eval("Id") %>' CommandName="CheckAvailability">Check Availability</asp:LinkButton>--%>
-                                                            <%--<asp:TextBox ID="TextBoxTeacherInitial" runat="server" placeholder="Teacher Initial"></asp:TextBox>--%>
-                                                            <span style="font-size:10px; font-weight:bold">Teacher Initial</span>
-                                                            
-                                                            <asp:ComboBox ID="ComboBoxTeacherInitial" runat="server" DataSourceID="SqlDataSourceTeacherInitial" DataTextField="Teacher" DataValueField="Teacher" MaxLength="0" Style="display: inline;" AutoCompleteMode="Suggest" ItemInsertLocation="OrdinalText"></asp:ComboBox>
-                                                            <asp:SqlDataSource ID="SqlDataSourceTeacherInitial" runat="server" ConnectionString="<%$ ConnectionStrings:RUTINConnectionString %>" SelectCommand="SELECT DISTINCT Teacher FROM Routine WHERE Teacher IS NOT NULL"></asp:SqlDataSource>
-                                                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidatorTeacher" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ComboBoxTeacherInitial"></asp:RequiredFieldValidator>--%>
-                                                            <br />
-                                                            <span style="font-size:10px; font-weight:bold">Course Code &nbsp;</span>
-                                                            
-                                                            <asp:ComboBox ID="ComboBoxCourse" runat="server" DataSourceID="SqlDataSourceCourseCode" DataTextField="Course" DataValueField="Course" MaxLength="0" Style="display: inline;" AutoCompleteMode="Suggest" ItemInsertLocation="OrdinalText"></asp:ComboBox>
-                                                            <asp:SqlDataSource ID="SqlDataSourceCourseCode" runat="server" ConnectionString="<%$ ConnectionStrings:RUTINConnectionString %>" SelectCommand="SELECT DISTINCT Course FROM Routine WHERE Course IS NOT NULL"></asp:SqlDataSource>
-                                                            <%--<asp:TextBox ID="TextBoxCourse" runat="server" placeholder="Course Code"></asp:TextBox>--%>
-                                                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidatorCourse" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ComboBoxCourse"></asp:RequiredFieldValidator>--%>
-                                                            <br />
-                                                            <asp:LinkButton ID="LinkButtonBook" runat="server" CommandArgument='<%# Eval("Id") %>' CommandName="Book" CausesValidation="false">Book This Schedule</asp:LinkButton><br />
-                                                            <asp:LinkButton ID="LinkButtonCancelBook" runat="server" CommandArgument='<%# Eval("Id") %>' CommandName="CancelBook" CausesValidation="False">Cancel</asp:LinkButton>
-                                                            <br />
-                                                            <asp:Label ID="LblMsg" runat="server"></asp:Label>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -289,11 +293,11 @@
                                                             <asp:CalendarExtender ID="TextBoxDateOfAvailability_CalendarExtender" runat="server" Enabled="True" TargetControlID="TextBoxDateOfAvailability" Format="dd/MM/yyyy" StartDate='<%# DateTime.Now.AddDays(1) %>'></asp:CalendarExtender>
 
                                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxDateOfAvailability" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                                                            <br />
+
                                                             <%--<asp:RequiredFieldValidator ID="RequiredFieldValidatorDate" runat="server" ControlToValidate="TextBoxDateOfAvailability" Display="Dynamic" ErrorMessage="*Required" Style="color: #FF3300"></asp:RequiredFieldValidator><br />
                                                             <asp:RegularExpressionValidator ID="RegularExpressionValidatorDate" runat="server" ControlToValidate="TextBoxDateOfAvailability" Style="color: #FF0000;" ErrorMessage="Give date in dd/MM/yyyy Format" ValidationExpression="^(((((0[1-9])|(1\d)|(2[0-8]))\/((0[1-9])|(1[0-2])))|((31\/((0[13578])|(1[02])))|((29|30)\/((0[1,3-9])|(1[0-2])))))\/((20[0-9][0-9])|(19[0-9][0-9])))|((29\/02\/(19|20)(([02468][048])|([13579][26]))))$ "></asp:RegularExpressionValidator><br />--%>
-                                                            <asp:LinkButton ID="LinkButtonCheckAvailability" runat="server" CommandName="CheckAvailability" CommandArgument='<%# Eval("Id") %>' CausesValidation="false">Check Availability</asp:LinkButton><br />
-                                                            <asp:LinkButton ID="LinkButtonMessage" runat="server" CommandName="TryBook" CommandArgument='<%# Eval("Id") %>' CausesValidation="false"></asp:LinkButton>
+                                                            <asp:LinkButton ID="LinkButtonCheckAvailability" runat="server" CommandName="CheckAvailability" ToolTip="Check Availability" CommandArgument='<%# Eval("Id") %>' CausesValidation="false" CssClass="btn btn-default"><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></asp:LinkButton><br />
+                                                            <asp:LinkButton ID="LinkButtonMessage" runat="server" CommandName="TryBook" ToolTip="Book This Schedule" CommandArgument='<%# Eval("Id") %>' CausesValidation="false" Visible="false"><i style="margin-right:6%" class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                                         </td>
                                                     </tr>
                                                 </table>
