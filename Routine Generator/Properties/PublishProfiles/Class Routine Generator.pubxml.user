@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\inetpub\wwwroot\routine_generator</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="007.aspx">
+      <publishTime>01/31/2018 16:13:35</publishTime>
+    </File>
+    <File Include="Admin.Master">
+      <publishTime>01/08/2018 00:25:34</publishTime>
+    </File>
+    <File Include="Application Error.aspx">
+      <publishTime>01/31/2018 16:13:25</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>01/09/2018 15:56:26</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>01/31/2018 16:39:19</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>01/31/2018 16:39:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/Routine Generator.dll">
+      <publishTime>01/31/2018 16:27:38</publishTime>
+    </File>
+    <File Include="Booked Slot List.aspx">
+      <publishTime>01/31/2018 16:13:12</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-grid.css">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-grid.css.map">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-grid.min.css">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-grid.min.css.map">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-reboot.css">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-reboot.css.map">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-reboot.min.css">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-reboot.min.css.map">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.css">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.css.map">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css.map">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/js/bootstrap.js">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js">
+      <publishTime>01/08/2018 04:36:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap.cosmo.css">
+      <publishTime>01/08/2018 04:15:04</publishTime>
+    </File>
+    <File Include="Content/bootstrap.cosmo.min.css">
+      <publishTime>01/08/2018 02:40:20</publishTime>
+    </File>
+    <File Include="DBScript.html">
+      <publishTime>01/22/2018 04:15:45</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>01/31/2018 16:09:09</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/css/font-awesome.css">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/css/font-awesome.min.css">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/fonts/fontawesome-webfont.eot">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/fonts/fontawesome-webfont.svg">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/fonts/fontawesome-webfont.ttf">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/fonts/fontawesome-webfont.woff">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/fonts/fontawesome-webfont.woff2">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/fonts/FontAwesome.otf">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/HELP-US-OUT.txt">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/animated.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/bordered-pulled.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/core.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/fixed-width.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/font-awesome.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/icons.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/larger.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/list.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/mixins.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/path.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/rotated-flipped.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/screen-reader.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/stacked.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/less/variables.less">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/font-awesome.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_animated.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_bordered-pulled.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_core.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_fixed-width.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_icons.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_larger.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_list.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_mixins.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_path.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_rotated-flipped.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_screen-reader.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_stacked.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome-4.7.0/scss/_variables.scss">
+      <publishTime>01/22/2018 20:00:23</publishTime>
+    </File>
+    <File Include="font-awesome/css/font-awesome-ie7.css">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/css/font-awesome-ie7.min.css">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/css/font-awesome.css">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/css/font-awesome.min.css">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/font/fontawesome-webfont.eot">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/font/fontawesome-webfont.svg">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/font/fontawesome-webfont.ttf">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/font/fontawesome-webfont.woff">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/font/FontAwesome.otf">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/less/bootstrap.less">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/less/core.less">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/less/extras.less">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/less/font-awesome-ie7.less">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/less/font-awesome.less">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/less/icons.less">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/less/mixins.less">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/less/path.less">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/less/variables.less">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/scss/font-awesome-ie7.scss">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/scss/font-awesome.scss">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/scss/_bootstrap.scss">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/scss/_core.scss">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/scss/_extras.scss">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/scss/_icons.scss">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/scss/_mixins.scss">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/scss/_path.scss">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="font-awesome/scss/_variables.scss">
+      <publishTime>01/23/2018 23:42:48</publishTime>
+    </File>
+    <File Include="Home.aspx">
+      <publishTime>01/31/2018 16:13:03</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/22/2018 02:53:35</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>01/31/2018 16:39:16</publishTime>
+    </File>
+    <File Include="Routine By Course Code.aspx">
+      <publishTime>01/31/2018 16:12:15</publishTime>
+    </File>
+    <File Include="Routine By Semester.aspx">
+      <publishTime>01/31/2018 16:12:24</publishTime>
+    </File>
+    <File Include="Routine Generator/assets/bootstrap/css/bootstrap.min.css">
+      <publishTime>01/08/2018 04:48:17</publishTime>
+    </File>
+    <File Include="Routine Generator/assets/bootstrap/js/bootstrap.min.js">
+      <publishTime>01/08/2018 01:44:11</publishTime>
+    </File>
+    <File Include="Routine Generator/assets/css/ajax-load.gif">
+      <publishTime>01/09/2018 00:37:47</publishTime>
+    </File>
+    <File Include="Routine Generator/assets/css/styles.css">
+      <publishTime>01/09/2018 01:00:26</publishTime>
+    </File>
+    <File Include="Routine Generator/assets/img/Daffodil-KP.png">
+      <publishTime>01/08/2018 01:44:11</publishTime>
+    </File>
+    <File Include="Routine Generator/assets/img/loading.gif">
+      <publishTime>01/09/2018 17:00:00</publishTime>
+    </File>
+    <File Include="Routine Generator/assets/js/download.js">
+      <publishTime>01/08/2018 21:31:23</publishTime>
+    </File>
+    <File Include="Routine Generator/assets/js/html2canvas.js">
+      <publishTime>01/09/2018 17:42:50</publishTime>
+    </File>
+    <File Include="Routine Generator/assets/js/jquery.min.js">
+      <publishTime>01/08/2018 01:44:11</publishTime>
+    </File>
+    <File Include="Routine Generator/index.html">
+      <publishTime>01/08/2018 05:04:57</publishTime>
+    </File>
+    <File Include="Routine Generator/Routine By Course Code.html">
+      <publishTime>01/08/2018 01:50:14</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>01/31/2018 16:39:01</publishTime>
+    </File>
+    <File Include="View Empty Slot.aspx">
+      <publishTime>01/31/2018 16:13:50</publishTime>
+    </File>
+    <File Include="View Routine.aspx">
+      <publishTime>01/31/2018 16:36:04</publishTime>
+    </File>
+    <File Include="View Routine.Master">
+      <publishTime>01/31/2018 16:26:36</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/31/2018 16:01:41</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

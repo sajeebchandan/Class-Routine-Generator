@@ -1,4 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="View Routine.aspx.cs" Inherits="Routine_Generator.View_Routine_By_Course_Code" %>
+﻿<%@ Page Title="Routine" Language="C#" MasterPageFile="~/View Routine.Master" AutoEventWireup="true" CodeBehind="View Routine.aspx.cs" Inherits="Routine_Generator.View_Routine_By_Course_Code" %>
+
+
+
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <%--<link rel="stylesheet" href="Content/bootstrap.cosmo.css" />--%>
@@ -185,7 +189,7 @@
                             <table class="table  table-bordered  table-responsive">
                                 <tr>
                                     <td class="text-center" style="background-color: black; color: white; width: 100%">
-                                        <h5 style="text-align: center">Developed By <a style="color:lawngreen" href="https://facebook.com/sajeeb.chandan">Sajeeb Chandan</a></h5>
+                                        <h5 style="text-align: center">Developed By <a style="color: lawngreen" href="https://facebook.com/sajeeb.chandan">Sajeeb Chandan</a></h5>
                                     </td>
                                 </tr>
                             </table>
@@ -277,7 +281,7 @@
                             <table class="table  table-bordered  table-responsive">
                                 <tr>
                                     <td class="text-center" style="background-color: black; color: white; width: 100%">
-                                        <h5 style="text-align: center">Developed By <a style="color:lawngreen" href="https://facebook.com/sajeeb.chandan">Sajeeb Chandan</a></h5>
+                                        <h5 style="text-align: center">Developed By <a style="color: lawngreen" href="https://facebook.com/sajeeb.chandan">Sajeeb Chandan</a></h5>
                                     </td>
                                 </tr>
                             </table>

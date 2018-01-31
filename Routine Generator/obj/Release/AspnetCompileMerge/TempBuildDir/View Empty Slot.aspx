@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="View Empty Slot.aspx.cs" Inherits="Routine_Generator.View_Empty_Slot" %>
+﻿<%@ Page Title="Empty Slot" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="View Empty Slot.aspx.cs" Inherits="Routine_Generator.View_Empty_Slot" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 

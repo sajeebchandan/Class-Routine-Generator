@@ -5,7 +5,8 @@
 <head runat="server">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Routine Extractor</title>
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="Routine Generator/assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="Routine Generator/assets/css/styles.css" />
     <script src="Routine Generator/assets/js/jquery.min.js"></script>

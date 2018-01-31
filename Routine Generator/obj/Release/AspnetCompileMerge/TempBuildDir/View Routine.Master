@@ -1,4 +1,18 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Routine_Generator.Site" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="View Routine.master.cs" Inherits="Routine_Generator.View_Routine" %>
+
+<%@ Import Namespace="System.Web.UI.WebControls" %>
+<%@ Import Namespace="System.Diagnostics" %>
+<%@ Import Namespace="System" %>
+<%@ Import Namespace="System.Web" %>
+<%@ Import Namespace="System.Web.UI" %>
+<%@ Import Namespace="System.IO" %>
+
+
+<%
+    Page.Title ="Routine "+HeaderText().ToString().Replace("_", " ");
+%>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -6,7 +20,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Routine Extractor</title>
-    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut-icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="Routine Generator/assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="Routine Generator/assets/css/styles.css" />
     <script src="Routine Generator/assets/js/jquery.min.js"></script>

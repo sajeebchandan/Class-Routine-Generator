@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Routine By Course Code.aspx.cs" Inherits="Routine_Generator.Routine_By_Course_Code" %>
+﻿<%@ Page Title="Routine By Course Code" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Routine By Course Code.aspx.cs" Inherits="Routine_Generator.Routine_By_Course_Code" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
