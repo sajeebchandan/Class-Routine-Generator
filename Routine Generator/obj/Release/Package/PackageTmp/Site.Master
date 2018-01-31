@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Routine_Generator.Site" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="Routine Generator/assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Routine Generator/assets/css/styles.css" />
+    <script src="Routine Generator/assets/js/jquery.min.js"></script>
+    <script src="Routine Generator/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="Routine Generator/assets/js/html2canvas.js"></script>
+    <script src="Routine Generator/assets/js/download.js"></script>
+    <link href="font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome-ie7.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <a href="Home.aspx">
+                <img class="img-responsive" src="Routine Generator/assets/img/Daffodil-KP.png" width="400"></a>
+            <h1 class="text-center text-warning bg-primary">Class Routine Generator</h1>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <br />
+        <footer class="panel-footer">
+            <h5 style="text-align: center">Developed By <a href="https://facebook.com/sajeeb.chandan">Sajeeb Chandan</a></h5>
+        </footer>
+    </form>
+</body>
+</html>
