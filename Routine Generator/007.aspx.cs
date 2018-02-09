@@ -25,7 +25,7 @@ namespace Routine_Generator
         private void ExcelConn(string FilePath)
         {
 
-            constr = string.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=""Excel 12.0 Xml;HDR=YES""", FilePath);
+            constr = string.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=""Excel 12.0 Xml;HDR=YES;IMEX=1;""", FilePath);
             Econ = new OleDbConnection(constr);
         }
 
@@ -35,7 +35,7 @@ namespace Routine_Generator
             {
                 string fileExtension = Path.GetExtension(FileUpload1.FileName);
                 int fileSize = FileUpload1.PostedFile.ContentLength;
-                if (fileSize<= 2097152)
+                if (fileSize <= 2097152)
                 {
                     if (fileExtension.ToLower() == ".xlsx")
                     {
@@ -49,7 +49,7 @@ namespace Routine_Generator
                     {
                         Label1.Text = "Only Excel files are supported. (" + fileExtension + ") files are not supported";
                         Label1.ForeColor = System.Drawing.Color.Red;
-                    } 
+                    }
                 }
                 else
                 {
