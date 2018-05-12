@@ -50,7 +50,7 @@ namespace Routine_Generator
                         cookieGenerator["course1"] = "MAT221" + TextBoxSec.Text.ToString();
                         cookieGenerator["course2"] = "SWE231" + TextBoxSec.Text.ToString();
                         cookieGenerator["course3"] = "SWE133" + TextBoxSec.Text.ToString();
-                        cookieGenerator["course4"] = "STA134" + TextBoxSec.Text.ToString();
+                        cookieGenerator["course4"] = "STA101" + TextBoxSec.Text.ToString();
                         cookieGenerator["course5"] = "NULL";
                         cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());
                         cookieGenerator["semester"] = RadioButtonListDept.SelectedItem.Text + "_" + RadioButtonListSelectSemester.SelectedItem.Text + "_" + "(Section " + TextBoxSec.Text + ")";
@@ -143,9 +143,9 @@ namespace Routine_Generator
                     }
                     else if (RadioButtonListSelectSemester.SelectedItem.Text == "Level 4 - Term 2")
                     {
-                        cookieGenerator["course1"] = "SWE435" + TextBoxSec.Text.ToString();
-                        cookieGenerator["course2"] = "SWE438" + TextBoxSec.Text.ToString();
-                        cookieGenerator["course3"] = "SWE439" + TextBoxSec.Text.ToString();
+                        cookieGenerator["course1"] = "SWE431" + TextBoxSec.Text.ToString();
+                        cookieGenerator["course2"] = "SWE411" + TextBoxSec.Text.ToString();
+                        cookieGenerator["course3"] = "NULL";
                         cookieGenerator["course4"] = "NULL";
                         cookieGenerator["course5"] = "NULL";
                         cookieGenerator["dept"] = GetTableNameByDept(RadioButtonListDept.SelectedItem.Text.ToString());

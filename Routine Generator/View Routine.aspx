@@ -146,7 +146,7 @@
 
 
 
-    <h2 class="text-center bg-info" id="routinetitle">Routine of Spring 2018</h2>
+    <h2 class="text-center bg-info" id="routinetitle">Routine of Summer 2018</h2>
     <input type="button" id="btnSave" value="Save as Image" class="btn btn-primary btn-md" style="margin-left: 2%;" onclick="onClickbtn()" />
     <asp:Button ID="Button1" runat="server" class="btn btn-primary btn-md" Style="margin-left: 2%;" Text="Save Minified Image" OnClick="Button1_Click" />
     <span class="contas" id="contass">

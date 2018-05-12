@@ -26,7 +26,7 @@ namespace Routine_Generator
                         {
                             HttpCookie cookieGenerator = new HttpCookie("CourseCodes");
 
-                            if (!String.IsNullOrEmpty(TextBoxCourse1.Text.ToString()))
+                            if (!String.IsNullOrEmpty(TextBoxCourse1.Text.ToString().Replace(" ", "")))
                             {
                                 cookieGenerator["course1"] = TextBoxCourse1.Text.ToString();
                             }
@@ -36,7 +36,7 @@ namespace Routine_Generator
                             }
 
 
-                            if (!String.IsNullOrEmpty(TextBoxCourse2.Text.ToString()))
+                            if (!String.IsNullOrEmpty(TextBoxCourse2.Text.ToString().Replace(" ", "")))
                             {
                                 cookieGenerator["course2"] = TextBoxCourse2.Text.ToString();
                             }
@@ -46,7 +46,7 @@ namespace Routine_Generator
                             }
 
 
-                            if (!String.IsNullOrEmpty(TextBoxCourse3.Text.ToString()))
+                            if (!String.IsNullOrEmpty(TextBoxCourse3.Text.ToString().Replace(" ", "")))
                             {
                                 cookieGenerator["course3"] = TextBoxCourse3.Text.ToString();
                             }
@@ -56,7 +56,7 @@ namespace Routine_Generator
                             }
 
 
-                            if (!String.IsNullOrEmpty(TextBoxCourse4.Text.ToString()))
+                            if (!String.IsNullOrEmpty(TextBoxCourse4.Text.ToString().Replace(" ", "")))
                             {
                                 cookieGenerator["course4"] = TextBoxCourse4.Text.ToString();
                             }
@@ -66,7 +66,7 @@ namespace Routine_Generator
                             }
 
 
-                            if (!String.IsNullOrEmpty(TextBoxCourse5.Text.ToString()))
+                            if (!String.IsNullOrEmpty(TextBoxCourse5.Text.ToString().Replace(" ", "")))
                             {
                                 cookieGenerator["course5"] = TextBoxCourse5.Text.ToString();
                             }
@@ -262,7 +262,7 @@ namespace Routine_Generator
                 return 3;
             else if (CourseCode.Contains("SWE133"))
                 return 4;
-            else if (CourseCode.Contains("STA134"))
+            else if (CourseCode.Contains("STA101"))
                 return 3;
             else if (CourseCode.Contains("SWE132"))
                 return 4;
@@ -318,11 +318,9 @@ namespace Routine_Generator
                 return 4;
             else if (CourseCode.Contains("SWE332"))
                 return 3;
-            else if (CourseCode.Contains("SWE435"))
-                return 3;
-            else if (CourseCode.Contains("SWE438"))
+            else if (CourseCode.Contains("SWE411"))
                 return 4;
-            else if (CourseCode.Contains("SWE439"))
+            else if (CourseCode.Contains("SWE431"))
                 return 3;
 
             else

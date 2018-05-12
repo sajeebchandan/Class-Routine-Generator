@@ -60,3 +60,45 @@ F:\IDEs\git\Routine Generator\Routine Generator\obj\Debug\Routine Generator.dll
 F:\IDEs\git\Routine Generator\Routine Generator\obj\Debug\Routine Generator.pdb
 F:\IDEs\Visual Studio 2015\Project New\Routine Generator\Routine Generator\bin\AjaxControlToolkit.dll
 F:\IDEs\git\Routine Generator\Routine Generator\bin\AjaxControlToolkit.dll
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\csc.exe
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\System.Collections.Immutable.dll
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\System.Reflection.Metadata.dll
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\vbc.exe
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\VBCSCompiler.exe
+G:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\VBCSCompiler.exe.config
+G:\IDEs\git\Routine Generator\Routine Generator\bin\Routine Generator.dll.config
+G:\IDEs\git\Routine Generator\Routine Generator\bin\Routine Generator.dll
+G:\IDEs\git\Routine Generator\Routine Generator\bin\Routine Generator.pdb
+G:\IDEs\git\Routine Generator\Routine Generator\bin\AjaxControlToolkit.dll
+G:\IDEs\git\Routine Generator\Routine Generator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\IDEs\git\Routine Generator\Routine Generator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\IDEs\git\Routine Generator\Routine Generator\obj\Debug\Routine Generator.csprojResolveAssemblyReference.cache
+G:\IDEs\git\Routine Generator\Routine Generator\obj\Debug\Routine Generator.dll
+G:\IDEs\git\Routine Generator\Routine Generator\obj\Debug\Routine Generator.pdb
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\csc.exe
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.CodeAnalysis.dll
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.CSharp.Core.targets
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\Microsoft.VisualBasic.Core.targets
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\System.Collections.Immutable.dll
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\System.Reflection.Metadata.dll
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\vbc.exe
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\VBCSCompiler.exe
+H:\IDEs\git\Routine Generator\Routine Generator\bin\roslyn\VBCSCompiler.exe.config
+H:\IDEs\git\Routine Generator\Routine Generator\bin\Routine Generator.dll.config
+H:\IDEs\git\Routine Generator\Routine Generator\bin\Routine Generator.dll
+H:\IDEs\git\Routine Generator\Routine Generator\bin\Routine Generator.pdb
+H:\IDEs\git\Routine Generator\Routine Generator\bin\AjaxControlToolkit.dll
+H:\IDEs\git\Routine Generator\Routine Generator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+H:\IDEs\git\Routine Generator\Routine Generator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+H:\IDEs\git\Routine Generator\Routine Generator\obj\Debug\Routine Generator.csprojResolveAssemblyReference.cache
+H:\IDEs\git\Routine Generator\Routine Generator\obj\Debug\Routine Generator.dll
+H:\IDEs\git\Routine Generator\Routine Generator\obj\Debug\Routine Generator.pdb

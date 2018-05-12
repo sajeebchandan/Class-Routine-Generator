@@ -67,8 +67,8 @@ namespace Routine_Generator
                 System.Threading.Thread.Sleep(2000);
                 HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
                 LoadDataLAB1(gatheredCookie["dept"].ToString());
-                RowDataBoundLAB1(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
-                RowDataBoundLAB1Min(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+                RowDataBoundLAB1(gatheredCookie["course1"].ToString().Replace(" ", ""), gatheredCookie["course2"].ToString().Replace(" ", ""), gatheredCookie["course3"].ToString().Replace(" ", ""), gatheredCookie["course4"].ToString().Replace(" ", ""), gatheredCookie["course5"].ToString().Replace(" ", ""), gatheredCookie["dept"].ToString().Replace(" ", ""));
+                RowDataBoundLAB1Min(gatheredCookie["course1"].ToString().Replace(" ", ""), gatheredCookie["course2"].ToString().Replace(" ", ""), gatheredCookie["course3"].ToString().Replace(" ", ""), gatheredCookie["course4"].ToString().Replace(" ", ""), gatheredCookie["course5"].ToString().Replace(" ", ""), gatheredCookie["dept"].ToString().Replace(" ", ""));
             }
             catch (Exception ex)
             {
@@ -89,8 +89,8 @@ namespace Routine_Generator
                 System.Threading.Thread.Sleep(2000);
                 HttpCookie gatheredCookie = Request.Cookies["CourseCodes"];
                 LoadDataLAB2(gatheredCookie["dept"].ToString());
-                RowDataBoundLAB2(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
-                RowDataBoundLAB2Min(gatheredCookie["course1"].ToString(), gatheredCookie["course2"].ToString(), gatheredCookie["course3"].ToString(), gatheredCookie["course4"].ToString(), gatheredCookie["course5"].ToString(), gatheredCookie["dept"].ToString());
+                RowDataBoundLAB2(gatheredCookie["course1"].ToString().Replace(" ", ""), gatheredCookie["course2"].ToString().Replace(" ", ""), gatheredCookie["course3"].ToString().Replace(" ", ""), gatheredCookie["course4"].ToString().Replace(" ", ""), gatheredCookie["course5"].ToString().Replace(" ", ""), gatheredCookie["dept"].ToString().Replace(" ", ""));
+                RowDataBoundLAB2Min(gatheredCookie["course1"].ToString().Replace(" ", ""), gatheredCookie["course2"].ToString().Replace(" ", ""), gatheredCookie["course3"].ToString().Replace(" ", ""), gatheredCookie["course4"].ToString().Replace(" ", ""), gatheredCookie["course5"].ToString().Replace(" ", ""), gatheredCookie["dept"].ToString().Replace(" ", ""));
             }
             catch (Exception ex)
             {
@@ -100,7 +100,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
 
@@ -119,7 +119,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
 
@@ -139,7 +139,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
             //GridViewMin.Visible = false;
         }
@@ -180,7 +180,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
         #endregion
@@ -214,7 +214,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
         #endregion
@@ -229,21 +229,21 @@ namespace Routine_Generator
                 SqlConnection con = new SqlConnection(CS);
                 string sql = "SELECT DISTINCT Day, DayID FROM " + dept + " WHERE Course = @course1 OR Course = @course2 OR Course = @course3 OR Course = @course4 OR Course = @course5 OR Course = @course1lab OR Course = @course2lab OR Course = @course3lab OR Course = @course4lab OR Course = @course5lab OR Course = @course1l OR Course = @course2l OR Course = @course3l OR Course = @course4l OR Course = @course5l  ORDER BY DayID";
                 SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@course1", gatheredCookie["course1"].ToString());
-                cmd.Parameters.AddWithValue("@course2", gatheredCookie["course2"].ToString());
-                cmd.Parameters.AddWithValue("@course3", gatheredCookie["course3"].ToString());
-                cmd.Parameters.AddWithValue("@course4", gatheredCookie["course4"].ToString());
-                cmd.Parameters.AddWithValue("@course5", gatheredCookie["course5"].ToString());
-                cmd.Parameters.AddWithValue("@course1lab", gatheredCookie["course1"].ToString() + "LAB1");
-                cmd.Parameters.AddWithValue("@course2lab", gatheredCookie["course2"].ToString() + "LAB1");
-                cmd.Parameters.AddWithValue("@course3lab", gatheredCookie["course3"].ToString() + "LAB1");
-                cmd.Parameters.AddWithValue("@course4lab", gatheredCookie["course4"].ToString() + "LAB1");
-                cmd.Parameters.AddWithValue("@course5lab", gatheredCookie["course5"].ToString() + "LAB1");
-                cmd.Parameters.AddWithValue("@course1l", gatheredCookie["course1"].ToString() + "1");
-                cmd.Parameters.AddWithValue("@course2l", gatheredCookie["course2"].ToString() + "1");
-                cmd.Parameters.AddWithValue("@course3l", gatheredCookie["course3"].ToString() + "1");
-                cmd.Parameters.AddWithValue("@course4l", gatheredCookie["course4"].ToString() + "1");
-                cmd.Parameters.AddWithValue("@course5l", gatheredCookie["course5"].ToString() + "1");
+                cmd.Parameters.AddWithValue("@course1", gatheredCookie["course1"].ToString().Replace(" ", ""));
+                cmd.Parameters.AddWithValue("@course2", gatheredCookie["course2"].ToString().Replace(" ", ""));
+                cmd.Parameters.AddWithValue("@course3", gatheredCookie["course3"].ToString().Replace(" ", ""));
+                cmd.Parameters.AddWithValue("@course4", gatheredCookie["course4"].ToString().Replace(" ", ""));
+                cmd.Parameters.AddWithValue("@course5", gatheredCookie["course5"].ToString().Replace(" ", ""));
+                cmd.Parameters.AddWithValue("@course1lab", gatheredCookie["course1"].ToString().Replace(" ", "") + "LAB1");
+                cmd.Parameters.AddWithValue("@course2lab", gatheredCookie["course2"].ToString().Replace(" ", "") + "LAB1");
+                cmd.Parameters.AddWithValue("@course3lab", gatheredCookie["course3"].ToString().Replace(" ", "") + "LAB1");
+                cmd.Parameters.AddWithValue("@course4lab", gatheredCookie["course4"].ToString().Replace(" ", "") + "LAB1");
+                cmd.Parameters.AddWithValue("@course5lab", gatheredCookie["course5"].ToString().Replace(" ", "") + "LAB1");
+                cmd.Parameters.AddWithValue("@course1l", gatheredCookie["course1"].ToString().Replace(" ", "") + "1");
+                cmd.Parameters.AddWithValue("@course2l", gatheredCookie["course2"].ToString().Replace(" ", "") + "1");
+                cmd.Parameters.AddWithValue("@course3l", gatheredCookie["course3"].ToString().Replace(" ", "") + "1");
+                cmd.Parameters.AddWithValue("@course4l", gatheredCookie["course4"].ToString().Replace(" ", "") + "1");
+                cmd.Parameters.AddWithValue("@course5l", gatheredCookie["course5"].ToString().Replace(" ", "") + "1");
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 GridViewWeekDay.DataSource = rdr;
@@ -258,7 +258,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
         #endregion
@@ -273,21 +273,21 @@ namespace Routine_Generator
                 SqlConnection con = new SqlConnection(CS);
                 string sql = "SELECT DISTINCT Day, DayID FROM " + dept + " WHERE Course = @course1 OR Course = @course2 OR Course = @course3 OR Course = @course4 OR Course = @course5 OR Course = @course1lab OR Course = @course2lab OR Course = @course3lab OR Course = @course4lab OR Course = @course5lab OR Course = @course1l OR Course = @course2l OR Course = @course3l OR Course = @course4l OR Course = @course5l  ORDER BY DayID";
                 SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@course1", gatheredCookie["course1"].ToString());
-                cmd.Parameters.AddWithValue("@course2", gatheredCookie["course2"].ToString());
-                cmd.Parameters.AddWithValue("@course3", gatheredCookie["course3"].ToString());
-                cmd.Parameters.AddWithValue("@course4", gatheredCookie["course4"].ToString());
-                cmd.Parameters.AddWithValue("@course5", gatheredCookie["course5"].ToString());
-                cmd.Parameters.AddWithValue("@course1lab", gatheredCookie["course1"].ToString() + "LAB2");
-                cmd.Parameters.AddWithValue("@course2lab", gatheredCookie["course2"].ToString() + "LAB2");
-                cmd.Parameters.AddWithValue("@course3lab", gatheredCookie["course3"].ToString() + "LAB2");
-                cmd.Parameters.AddWithValue("@course4lab", gatheredCookie["course4"].ToString() + "LAB2");
-                cmd.Parameters.AddWithValue("@course5lab", gatheredCookie["course5"].ToString() + "LAB2");
-                cmd.Parameters.AddWithValue("@course1l", gatheredCookie["course1"].ToString() + "2");
-                cmd.Parameters.AddWithValue("@course2l", gatheredCookie["course2"].ToString() + "2");
-                cmd.Parameters.AddWithValue("@course3l", gatheredCookie["course3"].ToString() + "2");
-                cmd.Parameters.AddWithValue("@course4l", gatheredCookie["course4"].ToString() + "2");
-                cmd.Parameters.AddWithValue("@course5l", gatheredCookie["course5"].ToString() + "2");
+                cmd.Parameters.AddWithValue("@course1", gatheredCookie["course1"].ToString().Replace(" ", ""));
+                cmd.Parameters.AddWithValue("@course2", gatheredCookie["course2"].ToString().Replace(" ", ""));
+                cmd.Parameters.AddWithValue("@course3", gatheredCookie["course3"].ToString().Replace(" ", ""));
+                cmd.Parameters.AddWithValue("@course4", gatheredCookie["course4"].ToString().Replace(" ", ""));
+                cmd.Parameters.AddWithValue("@course5", gatheredCookie["course5"].ToString().Replace(" ", ""));
+                cmd.Parameters.AddWithValue("@course1lab", gatheredCookie["course1"].ToString().Replace(" ", "") + "LAB2");
+                cmd.Parameters.AddWithValue("@course2lab", gatheredCookie["course2"].ToString().Replace(" ", "") + "LAB2");
+                cmd.Parameters.AddWithValue("@course3lab", gatheredCookie["course3"].ToString().Replace(" ", "") + "LAB2");
+                cmd.Parameters.AddWithValue("@course4lab", gatheredCookie["course4"].ToString().Replace(" ", "") + "LAB2");
+                cmd.Parameters.AddWithValue("@course5lab", gatheredCookie["course5"].ToString().Replace(" ", "") + "LAB2");
+                cmd.Parameters.AddWithValue("@course1l", gatheredCookie["course1"].ToString().Replace(" ", "") + "2");
+                cmd.Parameters.AddWithValue("@course2l", gatheredCookie["course2"].ToString().Replace(" ", "") + "2");
+                cmd.Parameters.AddWithValue("@course3l", gatheredCookie["course3"].ToString().Replace(" ", "") + "2");
+                cmd.Parameters.AddWithValue("@course4l", gatheredCookie["course4"].ToString().Replace(" ", "") + "2");
+                cmd.Parameters.AddWithValue("@course5l", gatheredCookie["course5"].ToString().Replace(" ", "") + "2");
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 GridViewWeekDay.DataSource = rdr;
@@ -302,7 +302,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
         #endregion
@@ -376,7 +376,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
         #endregion
@@ -545,7 +545,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
         #endregion
@@ -714,7 +714,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
         #endregion
@@ -878,7 +878,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
         #endregion
@@ -1042,7 +1042,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
         #endregion
@@ -1206,7 +1206,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
         #endregion
@@ -1369,7 +1369,7 @@ namespace Routine_Generator
                     Server.ClearError();
                     Server.Transfer("~/Application Error.aspx");
                 }
-                
+
             }
         }
         #endregion
@@ -1554,6 +1554,18 @@ namespace Routine_Generator
                 return "Samia Nasrin";
             else if (ti == "TRK")
                 return "Tasnim Rahman Katha";
+            else if (ti == "AST")
+                return "Atia Sanjida Talukdar";
+            else if (ti == "SMR")
+                return "Syed Mizanur Rahman";
+            else if (ti == "RK")
+                return "Rashed Karim";
+            else if (ti == "DAK")
+                return "Dr. Sk. Abdul Kader Arafin";
+            else if (ti == "MIH")
+                return "Mohammad Ikbal Hossain";
+            else if (ti == "DNPB")
+                return "Dr. Neil P. Balba";
             else if (ti == "TBA")
                 return "To be announced";
             else
