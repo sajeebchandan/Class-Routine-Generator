@@ -143,7 +143,7 @@ namespace Routine_Generator
                     }
                     else if (RadioButtonListSelectSemester.SelectedItem.Text == "Level 4 - Term 2")
                     {
-                        cookieGenerator["course1"] = "SWE431" + TextBoxSec.Text.ToString();
+                        cookieGenerator["course1"] = "SWE439" + TextBoxSec.Text.ToString();
                         cookieGenerator["course2"] = "SWE411" + TextBoxSec.Text.ToString();
                         cookieGenerator["course3"] = "NULL";
                         cookieGenerator["course4"] = "NULL";

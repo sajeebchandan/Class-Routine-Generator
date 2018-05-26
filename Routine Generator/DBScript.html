@@ -65,6 +65,62 @@
                 );
             </code>
         </div>
+
+        <div style="width:250px; height:201px;  float:left">
+            <code style="display:block; border:solid; height:201px; border-bottom-color:aliceblue; border-top-color:azure; border-left-color:azure; border-right-color:aliceblue; border-bottom-width:3px">
+                DBCC CHECKIDENT ('Routine', RESEED, 0)
+                DBCC CHECKIDENT ('Routine_Empty', RESEED, 0)
+            </code>
+        </div>
+        <div style="width:250px; height:201px;  float:left">
+            <code style="display:block; border:solid; height:201px; border-bottom-color:aliceblue; border-top-color:azure; border-left-color:azure; border-right-color:aliceblue; border-bottom-width:3px">
+                DELETE FROM Routine
+                DELETE FROM Routine_Empty
+                DELETE FROM Routine_Empty_Book_Slot
+            </code>
+        </div>
+
+        <div style="width:250px; height:201px;  float:left">
+            <code style="display:block; border:solid; height:201px; border-bottom-color:aliceblue; border-top-color:azure; border-left-color:azure; border-right-color:aliceblue; border-bottom-width:3px">
+                CREATE PROCEDURE sp_UpdateTimeForRamadan
+                AS
+                BEGIN
+                UPDATE Routine SET Schedule='09:30-10:25' WHERE Schedule='08:30-10:00'
+                UPDATE Routine SET Schedule='10:25-11:20' WHERE Schedule='10:00-11:30'
+                UPDATE Routine SET Schedule='11:20-12:15' WHERE Schedule='11:30-1:00'
+                UPDATE Routine SET Schedule='12:15-1:10' WHERE Schedule='1:00-2:30'
+                UPDATE Routine SET Schedule='01:40-2:35' WHERE Schedule='2:30-4:00'
+                UPDATE Routine SET Schedule='02:35-3:30' WHERE Schedule='4:00-5:30'
+                END
+
+
+                CREATE PROCEDURE sp_UpdateTimeForNormal
+                AS
+                BEGIN
+                UPDATE Routine SET Schedule='08:30-10:00' WHERE Schedule='09:30-10:25'
+                UPDATE Routine SET Schedule='10:00-11:30' WHERE Schedule='10:25-11:20'
+                UPDATE Routine SET Schedule='11:30-1:00' WHERE Schedule='11:20-12:15'
+                UPDATE Routine SET Schedule='1:00-2:30' WHERE Schedule='12:15-1:10'
+                UPDATE Routine SET Schedule='2:30-4:00' WHERE Schedule='1:40-2:35'
+                UPDATE Routine SET Schedule='4:00-5:30' WHERE Schedule='2:35-3:30'
+                END
+
+                CREATE PROCEDURE sp_ClearTable
+                AS
+                BEGIN
+                DELETE FROM Routine
+                DELETE FROM Routine_Empty
+                DELETE FROM Routine_Empty_Book_Slot
+                END
+
+                CREATE PROCEDURE sp_ResetIdentity
+                AS
+                BEGIN
+                DBCC CHECKIDENT ('Routine', RESEED, 0)
+                DBCC CHECKIDENT ('Routine_Empty', RESEED, 0)
+                END
+            </code>
+        </div>
     </div>
 </body>
 </html>
